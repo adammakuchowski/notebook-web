@@ -1,15 +1,15 @@
-import {Button, Container, Flex} from '@mantine/core'
+import {Container, Flex} from '@mantine/core'
 
 import {MenuHeader} from './header/header'
 import {SearchBar} from './searchBar/SearchBar'
-import classes from './Menu.module.css'
-import {IconPhoto} from '@tabler/icons-react'
+import styled from './Menu.module.css'
+import {TaskButton} from '../../../components/buttons/taskButton/TaskButton'
 
 export const Menu = (): JSX.Element => {
   return (
     <Flex
       classNames={{
-        root: classes.menuContainer
+        root: styled.menuContainer
       }}
       gap='md'
       justify='flex-start'
@@ -18,56 +18,38 @@ export const Menu = (): JSX.Element => {
       wrap='nowrap'
       bg={'#ededed'}
     >
-      <Flex
+      <Container
         classNames={{
-          root: classes.dash
+          root: styled.dash
         }}
-        direction='column'
-        gap='md'
-        w={'100%'}
+        px={0}
+        miw={'100%'}
+        pb={20}
       >
-        <Container
-          classNames={{
-            root: classes.dash
-          }}
-          px={0}
-          miw={'100%'}
-          pb={20}
-        >
-          <MenuHeader />
-          <SearchBar />
-        </Container>
+        <MenuHeader />
+        <SearchBar />
+      </Container>
 
-        <Container px={0} miw={'100%'}>
-          <Flex direction='column' gap={10}>
+      <Container
+        classNames={{root: styled.dash}}
+        px={0}
+        miw={'100%'}
+        pb={20}>
+        <Flex direction='column' gap={10}>
+          <TaskButton taskName='Upcoming' />
+          <TaskButton taskName='Today' alertCount={4} />
+          <TaskButton taskName='Calendar' />
+          <TaskButton taskName='Note' alertCount={2} />
+        </Flex>
+      </Container>
 
-            <Button leftSection={<IconPhoto size={14} />} variant="light" justify='flex-start'>
-              Gallery
-            </Button>
-
-            <Button
-              variant="light"
-              justify='space-between'
-              rightSection={<IconPhoto size={14} />}
-              px={10}
-            >
-              <Flex gap={10}>
-                <IconPhoto size={14} />
-                Gallery
-              </Flex>
-            </Button>
-
-          </Flex>
-        </Container>
-
-        {/* <Container px={0} miw={'100%'}>
+      {/* <Container px={0} miw={'100%'}>
           LISTS
         </Container>
 
         <Container px={0} miw={'100%'}>
           TAGS
         </Container> */}
-      </Flex>
 
       <Flex bg={'blue'}>
 

@@ -1,13 +1,13 @@
 import {Flex} from '@mantine/core'
 
 import {Header} from './components/header/Header'
-import classes from './Board.module.css'
+import styled from './Board.module.css'
 
 export const Board = (): JSX.Element => {
   return (
     <Flex
       classNames={{
-        root: classes.root
+        root: styled.root
       }}
       mih={50}
       gap='md'
