@@ -17,7 +17,7 @@ export const AlertIconCount = ({alertCount}: AlertIconCountProps): JSX.Element |
         root: styled.container
       }}
       bg={'gray.5'}
-      w={20}
+      w={30}
       h={20}
       px={10}
       c={'gray.8'}
