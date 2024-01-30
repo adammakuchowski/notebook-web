@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {MantineProvider} from '@mantine/core'
+import {MantineProvider, createTheme} from '@mantine/core'
 import '@mantine/core/styles.css'
 
 import {App} from './app/App.tsx'
@@ -12,9 +12,14 @@ if (!rootElement) {
   throw new Error('Element root must exist')
 }
 
+// https://mantine.dev/theming/default-props/
+const theme = createTheme({
+  fontFamily: 'Helvetica'
+})
+
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <MantineProvider>
+    <MantineProvider theme={theme}>
       <App />
     </MantineProvider>
   </React.StrictMode>

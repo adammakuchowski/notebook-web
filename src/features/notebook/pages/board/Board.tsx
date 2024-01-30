@@ -10,11 +10,12 @@ export const Board = (): JSX.Element => {
         root: classes.root
       }}
       mih={50}
-      gap="md"
-      justify="flex-start"
-      align="flex-start"
-      direction="row"
-      wrap="wrap"
+      gap='md'
+      bg={'pink.1'}
+      justify='flex-start'
+      align='flex-start'
+      direction='row'
+      wrap='wrap'
     >
       <Header />
     </Flex>

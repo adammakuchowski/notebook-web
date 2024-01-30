@@ -1,7 +1,10 @@
-.root {
+.menuContainer {
   width: 20%;
   height: 100%;
-  background-color: aqua;
   padding: 10px;
   border-radius: 20px;
+}
+
+.dash {
+  border-bottom: 1px solid #d4d4d4;
 }

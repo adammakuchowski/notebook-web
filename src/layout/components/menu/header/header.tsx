@@ -5,12 +5,11 @@ export const MenuHeader = (): JSX.Element => {
   return (
     <Flex
       miw={'100%'}
-      bg='rgba(0, 0, 0, .3)'
-      gap='md'
       justify='space-between'
       align='center'
       direction='row'
       wrap='nowrap'
+      pb={15}
     >
       <Title order={2}>Menu</Title>
       <ActionIcon variant='transparent' color='black' aria-label='Settings'>

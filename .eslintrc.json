@@ -37,6 +37,10 @@
         "@typescript-eslint/consistent-type-imports": "off",
         "@typescript-eslint/no-floating-promises": "off",
         "react/react-in-jsx-scope": "off",
-        "quotes": ["error", "single"]
+        "@typescript-eslint/no-confusing-void-expression": "off",
+        "quotes": [
+            "error",
+            "single"
+        ]
     }
 }
