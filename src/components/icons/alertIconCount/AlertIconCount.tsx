@@ -14,7 +14,7 @@ export const AlertIconCount = ({alertCount}: AlertIconCountProps): JSX.Element |
   return (
     <Center
       classNames={{
-        root: styled.container
+        root: styled.root
       }}
       bg={'gray.5'}
       w={30}
