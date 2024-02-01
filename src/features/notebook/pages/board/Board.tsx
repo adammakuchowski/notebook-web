@@ -1,6 +1,7 @@
+import {Outlet} from 'react-router-dom'
 import {Flex} from '@mantine/core'
 
-import {Header} from './components/header/Header'
+import {Menu} from './components/menu/Menu'
 import styled from './Board.module.css'
 
 export const Board = (): JSX.Element => {
@@ -10,14 +11,14 @@ export const Board = (): JSX.Element => {
         root: styled.root
       }}
       mih={50}
-      gap='md'
-      bg={'pink.1'}
       justify='flex-start'
       align='flex-start'
       direction='row'
-      wrap='wrap'
+      wrap='nowrap'
+      gap={15}
     >
-      <Header />
+      <Menu />
+      <Outlet />
     </Flex>
   )
 }
