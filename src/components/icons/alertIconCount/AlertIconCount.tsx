@@ -2,7 +2,7 @@ import {Center} from '@mantine/core'
 
 import styled from './AlertIconCount.module.css'
 
-type AlertIconCountProps = {
+export type AlertIconCountProps = {
   alertCount?: number;
 }
 
@@ -21,6 +21,8 @@ export const AlertIconCount = ({alertCount}: AlertIconCountProps): JSX.Element |
       h={20}
       px={10}
       c={'gray.8'}
+      fw={'bold'}
+      fz={15}
     >
       {alertCount}
     </Center >

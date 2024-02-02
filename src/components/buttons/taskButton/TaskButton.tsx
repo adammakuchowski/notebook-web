@@ -22,7 +22,7 @@ export const TaskButton = ({taskName, alertCount, icon}: TaskButtonProps): JSX.E
       classNames={{
         root: styled.root
       }}
-      variant="subtle"
+      variant='subtle'
       justify='space-between'
       rightSection={<AlertIconCount alertCount={alertCount} />}
       px={0}
