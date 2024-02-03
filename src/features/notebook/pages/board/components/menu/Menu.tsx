@@ -1,16 +1,12 @@
-import {Container, Flex} from '@mantine/core'
+import {
+  Container,
+  Flex
+} from '@mantine/core'
 
 import {MenuHeader} from './header/header'
 import {SearchBar} from './searchBar/SearchBar'
 import styled from './Menu.module.css'
-
-import {
-  IconArrowsRight,
-  IconListCheck,
-  IconCalendarMonth,
-  IconNote
-} from '@tabler/icons-react'
-import {TaskButton} from '../../../../../../components/buttons/taskButton/TaskButton'
+import {Tasks} from './tasks/Tasks'
 
 export const Menu = (): JSX.Element => {
   return (
@@ -42,12 +38,7 @@ export const Menu = (): JSX.Element => {
         px={0}
         miw={'100%'}
         pb={20}>
-        <Flex direction='column' gap={10}>
-          <TaskButton taskName='Upcoming' icon={<IconArrowsRight size={14} />} />
-          <TaskButton taskName='Today' alertCount={4} icon={<IconListCheck size={14} />}/>
-          <TaskButton taskName='Calendar' icon={<IconCalendarMonth size={14} />}/>
-          <TaskButton taskName='Note' alertCount={2} icon={<IconNote size={14} />}/>
-        </Flex>
+        <Tasks/>
       </Container>
 
       {/* <Container px={0} miw={'100%'}>
