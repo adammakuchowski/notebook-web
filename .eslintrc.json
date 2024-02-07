@@ -28,8 +28,8 @@
                     "requireLast": true
                 },
                 "singleline": {
-                    "delimiter": "semi",
-                    "requireLast": true
+                    "delimiter": "none",
+                    "requireLast": false
                 }
             }
         ],
@@ -38,6 +38,7 @@
         "@typescript-eslint/no-floating-promises": "off",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/no-confusing-void-expression": "off",
+        "@typescript-eslint/block-spacing": "off",
         "quotes": [
             "error",
             "single"

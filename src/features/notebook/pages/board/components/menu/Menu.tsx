@@ -7,20 +7,11 @@ import {MenuHeader} from './header/header'
 import {SearchBar} from './searchBar/SearchBar'
 import styled from './Menu.module.css'
 import {Tasks} from './tasks/Tasks'
+import {MenuContainer} from './MenuStyled'
 
 export const Menu = (): JSX.Element => {
   return (
-    <Flex
-      classNames={{
-        root: styled.menuContainer
-      }}
-      gap='md'
-      justify='flex-start'
-      align='center'
-      direction='column'
-      wrap='nowrap'
-      bg={'#ededed'}
-    >
+    <MenuContainer>
       <Container
         classNames={{
           root: styled.dash
@@ -52,6 +43,6 @@ export const Menu = (): JSX.Element => {
       <Flex bg={'blue'}>
 
       </Flex>
-    </Flex>
+    </MenuContainer>
   )
 }
