@@ -13,9 +13,10 @@
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
-    "@mantine/core": "^7.5.0",
-    "@mantine/hooks": "^7.5.0",
     "@tabler/icons-react": "^2.46.0",
+    "@types/compose-function": "^0.0.33",
+    "antd": "^5.14.1",
+    "compose-function": "^3.0.3",
     "dotenv": "^16.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
