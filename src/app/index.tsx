@@ -1,7 +1,5 @@
-import {Router} from '../router/Router'
-
 export const App = (): JSX.Element => {
   return (
-    <Router />
+    <div>123</div>
   )
 }
