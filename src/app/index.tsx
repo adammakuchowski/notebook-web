@@ -1,5 +1,10 @@
-export const App = (): JSX.Element => {
+import {Routing} from '../pages/index'
+import {withProviders} from './providers'
+
+const App = (): JSX.Element => {
   return (
-    <div>123</div>
+    <Routing/>
   )
 }
+
+export default withProviders(App)
