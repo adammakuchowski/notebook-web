@@ -20,19 +20,6 @@
             "never"
         ],
         "@typescript-eslint/strict-boolean-expressions": "off",
-        "@typescript-eslint/member-delimiter-style": [
-            "error",
-            {
-                "multiline": {
-                    "delimiter": "semi",
-                    "requireLast": true
-                },
-                "singleline": {
-                    "delimiter": "none",
-                    "requireLast": false
-                }
-            }
-        ],
         "@typescript-eslint/consistent-type-definitions": "off",
         "@typescript-eslint/consistent-type-imports": "off",
         "@typescript-eslint/no-floating-promises": "off",
@@ -42,6 +29,31 @@
         "quotes": [
             "error",
             "single"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": "return"
+            }
+        ],
+        "@typescript-eslint/member-delimiter-style": [
+            "error",
+            {
+                "multiline": {
+                    "delimiter": "semi",
+                    "requireLast": true
+                },
+                "singleline": {
+                    "delimiter": "semi",
+                    "requireLast": true
+                }
+            }
         ]
     }
 }
