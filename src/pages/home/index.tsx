@@ -1,7 +1,3 @@
-const Home = (): JSX.Element => {
-  return (
-    <div>Home</div>
-  )
-}
+import {Home} from './ui/Home'
 
 export default Home
