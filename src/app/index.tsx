@@ -1,4 +1,4 @@
-import {Routing} from '../pages/index'
+import {Routing} from 'pages'
 import {withProviders} from './providers'
 
 const App = (): JSX.Element => {

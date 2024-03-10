@@ -1,5 +1,5 @@
 import type {AxiosPromise} from 'axios'
-import {apiInstance} from './base'
+import {apiInstance} from '../base'
 import type {Note} from './models'
 
 const BASE_URL = '/note'
