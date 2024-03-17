@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@types/compose-function": "^0.0.33",
-    "antd": "^5.14.1",
     "axios": "^1.6.7",
     "compose-function": "^3.0.3",
     "dotenv": "^16.3.1",
