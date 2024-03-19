@@ -1,5 +1,10 @@
+import {LoginForm} from 'features/login'
+
 export const Login = (): JSX.Element => {
   return (
-    <div>Login</div>
+    <div>
+      123
+      <LoginForm/>
+    </div>
   )
 }
