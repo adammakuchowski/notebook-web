@@ -11,7 +11,7 @@
       "app/*": ["app/*"],
       "components/*": ["components/*"],
       "config/*": ["config/*"],
-      "feature/*": ["feature/*"],
+      "features/*": ["features/*"],
       "pages/*": ["pages/*"]
     },
     
