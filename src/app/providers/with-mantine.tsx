@@ -1,11 +1,8 @@
-import {MantineProvider, createTheme} from '@mantine/core'
-
-const theme = createTheme({
-  /** Your theme override here */
-})
+import '@mantine/core/styles.css'
+import {MantineProvider} from '@mantine/core'
 
 export const withMantine = (component: () => React.ReactNode) => () => (
-  <MantineProvider theme={theme}>
-      {component()}
+  <MantineProvider>
+    {component()}
   </MantineProvider>
 )
