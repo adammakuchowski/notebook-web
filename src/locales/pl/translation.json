@@ -1,0 +1,7 @@
+{
+  "login": {
+    "email": "Email",
+    "password": "Hasło",
+    "forgotPassword": "Zapomniałem hasła?"
+  }
+}

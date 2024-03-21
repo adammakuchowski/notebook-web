@@ -1,9 +1,12 @@
+import {useTranslation} from 'react-i18next'
 import {useForm} from '@mantine/form'
 import {TextInput, Button, Box, Group} from '@mantine/core'
 
 import {LoginFormContainer} from './loginFormStyled'
 
 export const LoginForm = (): JSX.Element => {
+  const {t} = useTranslation()
+
   const form = useForm({
     initialValues: {email: '', password: ''},
 
@@ -17,11 +20,11 @@ export const LoginForm = (): JSX.Element => {
     <LoginFormContainer>
       <Box maw={340} mx='auto'>
         <form onSubmit={form.onSubmit(console.log)}>
-          <TextInput label='Email' placeholder='Email' {...form.getInputProps('email')} />
-          <TextInput mt='sm' label='Password' placeholder='Password' {...form.getInputProps('password')} />
+          <TextInput label={t('login.email')} placeholder={t('login.email')} {...form.getInputProps('email')} />
+          <TextInput mt='sm' label={t('login.password')} placeholder={t('login.password')} {...form.getInputProps('password')} />
           <Group justify='flex-end'>
             <Button size='compact-xs' variant='white' justify='right' p='0'>
-              I forgot my password
+              {t('login.forgotPassword')}
             </Button>
           </Group>
           <Button type='submit' mt='xl' fullWidth>
