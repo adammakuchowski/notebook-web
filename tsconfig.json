@@ -12,7 +12,9 @@
       "components/*": ["components/*"],
       "config/*": ["config/*"],
       "features/*": ["features/*"],
-      "pages/*": ["pages/*"]
+      "pages/*": ["pages/*"],
+      "hooks/*": ["hooks/*"],
+      "hocs/*": ["hocs/*"]
     },
     
     /* Bundler mode */
