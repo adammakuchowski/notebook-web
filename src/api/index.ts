@@ -1,1 +1,2 @@
-export * as typicodeApi from './note'
+export * as noteApi from './note'
+export * as authApi from './auth'

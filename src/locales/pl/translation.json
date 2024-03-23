@@ -1,5 +1,6 @@
 {
   "login": {
+    "signIn": "Zaloguj się",
     "email": "Email",
     "password": "Hasło",
     "forgotPassword": "Zapomniałem hasła?"
