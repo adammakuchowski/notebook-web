@@ -7,8 +7,8 @@ const LoginPage = lazy(async () => await import('./login/index'))
 export const Routing = (): JSX.Element => {
   return (
     <Routes>
-      <Route path='/' element={<BoardPage/>} />
-      <Route path='/login' element={<LoginPage/>} />
+        <Route path='/' element={<BoardPage />} />
+        <Route path='/login' element={<LoginPage />} />
     </Routes>
   )
 }
