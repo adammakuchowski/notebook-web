@@ -1,8 +1,8 @@
 import '@mantine/core/styles.css'
 import {MantineProvider} from '@mantine/core'
 
-export const withMantine = (component: () => JSX.Element) => () => (
+export const withMantine = (Component: () => JSX.Element) => () => (
   <MantineProvider>
-    {component()}
+    <Component />
   </MantineProvider>
 )
