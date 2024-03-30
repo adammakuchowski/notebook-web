@@ -30,10 +30,11 @@ export const LoginForm = (): JSX.Element => {
         throw new Error('Error while sign in')
       }
 
-      const {data: {token}} = response
+      const {data: {token, refreshToken}} = response
       localStorage.setItem('token', token)
+      localStorage.setItem('refreshToken', refreshToken)
     } catch (err) {
-
+      // TODO
     }
   }
 

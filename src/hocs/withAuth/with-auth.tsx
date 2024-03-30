@@ -7,6 +7,8 @@ export const withAuth = (Component: () => JSX.Element) => (props: Record<string,
   // TODO: useAuth - should be useTokenValid
   const {isTokenValid} = useAuth()
 
+  console.log('isTokenValid', isTokenValid)
+
   if (!isTokenValid) {
     return (
       <Loader color='blue' />
