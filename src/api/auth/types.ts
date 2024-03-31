@@ -5,4 +5,5 @@ export type LoginData = {
 
 export type AuthorizationToken = {
   token: string;
+  refreshToken: string;
 }
