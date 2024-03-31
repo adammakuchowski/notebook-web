@@ -1,5 +1,6 @@
+import {useNavigate} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
-import {useQueryClient} from '@tanstack/react-query'
+import {useMutation} from '@tanstack/react-query'
 import {useForm} from '@mantine/form'
 import {
   TextInput,
@@ -14,28 +15,25 @@ import {LoginFormContainer} from './loginFormStyled'
 
 export const LoginForm = (): JSX.Element => {
   const {t} = useTranslation()
+  const navigate = useNavigate()
 
-  const queryClient = useQueryClient()
+  const {mutate, isPending} = useMutation({
+    mutationFn: authApi.loginUser,
+    onSuccess: (response) => {
+      const {data: {token, refreshToken}} = response
+
+      localStorage.setItem('token', token)
+      localStorage.setItem('refreshToken', refreshToken)
+      navigate('/')
+    },
+    onError: () => {
+      // TODO: init login error notification
+    }
+  })
 
   const signIn = async (): Promise<void> => {
     const {values} = form
-
-    try {
-      const response = await queryClient.fetchQuery({
-        queryFn: async () => await authApi.loginUser(values),
-        queryKey: ['signIn', values]
-      })
-
-      if (!response || response.status !== 200) {
-        throw new Error('Error while sign in')
-      }
-
-      const {data: {token, refreshToken}} = response
-      localStorage.setItem('token', token)
-      localStorage.setItem('refreshToken', refreshToken)
-    } catch (err) {
-      // TODO
-    }
+    mutate(values)
   }
 
   const form = useForm({
@@ -58,7 +56,7 @@ export const LoginForm = (): JSX.Element => {
               {t('login.forgotPassword')}
             </Button>
           </Group>
-          <Button type='submit' mt='xl' fullWidth>
+          <Button type='submit' mt='xl' fullWidth loading={isPending}>
             {t('login.signIn')}
           </Button>
         </form>

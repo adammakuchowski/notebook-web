@@ -9,6 +9,7 @@ import {UseAuth} from './types'
 
 export const useAuth = (): UseAuth => {
   const navigate = useNavigate()
+  // TODO: use useQuery instead of queryClient.fetchQuery
   const queryClient = useQueryClient()
   const [isTokenValid, setIsTokenValid] = useState<boolean>(false)
 
