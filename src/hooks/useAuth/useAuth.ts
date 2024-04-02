@@ -22,7 +22,7 @@ export const useAuth = (): UseAuth => {
   const checkToken = async (): Promise<void> => {
     const token = localStorage.getItem('token')
     if (!token) {
-      return redirectToLoginPage()
+      throw new Error('Toekn is required')
     }
 
     const decodedToken = jwtDecode(token)
