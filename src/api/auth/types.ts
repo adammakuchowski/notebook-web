@@ -7,3 +7,8 @@ export type AuthorizationToken = {
   token: string;
   refreshToken: string;
 }
+
+export type RefreshUserTokenProps = {
+  token: string;
+  refreshToken: string;
+}

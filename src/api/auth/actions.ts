@@ -3,7 +3,8 @@ import type {AxiosPromise} from 'axios'
 import {apiInstance} from '../base'
 import {
   AuthorizationToken,
-  LoginData
+  LoginData,
+  RefreshUserTokenProps
 } from './types'
 import {
   LOGIN_USER_URL,
@@ -14,7 +15,7 @@ export const loginUser = async (loginData: LoginData): AxiosPromise<Authorizatio
   await apiInstance.post(LOGIN_USER_URL, loginData)
 )
 
-export const refreshUserToken = async (token: string, refreshToken: string): AxiosPromise<AuthorizationToken> => (
+export const refreshUserToken = async ({token, refreshToken}: RefreshUserTokenProps): AxiosPromise<AuthorizationToken> => (
   await apiInstance.post(REFRESH_USER_TOKEN_URL, {refreshToken}, {
     headers: {
       Authorization: `Bearer ${token}`
