@@ -50,13 +50,12 @@ export const useAuth = (): UseAuth => {
       throw new Error('Token is deprecated')
     }
 
-    if (expirationTime.diff(moment(), 'minutes') < 5) {
-      const refreshToken = localStorage.getItem('refreshToken')
+    const refreshToken = localStorage.getItem('refreshToken')
+    if (!refreshToken) {
+      throw new Error('RefreshToken is required')
+    }
 
-      if (!refreshToken) {
-        throw new Error('Invalid refreshToken')
-      }
-
+    if (expirationTime.diff(moment(), 'minutes') < 10) {
       mutate({token, refreshToken})
     }
   }
