@@ -7,11 +7,11 @@ import {
   PasswordInput,
   Button,
   Box,
-  Group
+  Group,
+  Container
 } from '@mantine/core'
 
 import {authApi} from 'api'
-import {LoginFormContainer} from './loginFormStyled'
 
 export const LoginForm = (): JSX.Element => {
   const {t} = useTranslation()
@@ -46,13 +46,13 @@ export const LoginForm = (): JSX.Element => {
   })
 
   return (
-    <LoginFormContainer>
+    <Container>
       <Box maw={340} mx='auto'>
         <form onSubmit={form.onSubmit(signIn)}>
           <TextInput label={t('login.email')} placeholder={t('login.email')} {...form.getInputProps('email')} />
           <PasswordInput mt='sm' label={t('login.password')} placeholder={t('login.password')} {...form.getInputProps('password')} />
           <Group justify='flex-end'>
-            <Button size='compact-xs' variant='white' justify='right' p='0'>
+            <Button size='compact-xs' variant='default' justify='right' mt='10'>
               {t('login.forgotPassword')}
             </Button>
           </Group>
@@ -61,6 +61,6 @@ export const LoginForm = (): JSX.Element => {
           </Button>
         </form>
       </Box>
-    </LoginFormContainer>
+    </Container>
   )
 }

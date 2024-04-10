@@ -1,7 +1,9 @@
-import {CenterPositionContainer} from './with-center-position-styled'
+import {Container} from '@mantine/core'
+
+import classes from './with-center-position.module.css'
 
 export const withCenterPosition = <P extends object>(Component: React.ComponentType<P>) => (props: P) => (
-  <CenterPositionContainer>
+  <Container className={classes.centerPositionContainer} fluid>
     <Component {...props} />
-  </CenterPositionContainer>
+  </Container>
 )
