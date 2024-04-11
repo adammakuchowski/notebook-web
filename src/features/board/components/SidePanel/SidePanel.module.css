@@ -1,0 +1,7 @@
+.sidePanelContainer {
+    display: flex;
+    background-color: red;
+    width: 20%;
+    padding: 0;
+    margin: 0;
+}

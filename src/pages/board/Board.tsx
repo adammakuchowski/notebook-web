@@ -1,10 +1,11 @@
+import {Container} from '@mantine/core'
 import {SidePanel} from 'features'
-import {BoardContainer} from './boardStyled'
+import classes from './Board.module.css'
 
 export const Board = (): JSX.Element => {
   return (
-    <BoardContainer>
+    <Container className={classes.boardContainer} fluid>
       <SidePanel />
-    </BoardContainer>
+    </Container>
   )
 }
