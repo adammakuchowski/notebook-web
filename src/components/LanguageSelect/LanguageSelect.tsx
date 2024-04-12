@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next'
 import {languageSelectData} from './constants'
 import {ChangeLanguageProps} from './types'
 
-export const ChangeLanguageSelect = (): JSX.Element => {
+export const LanguageSelect = (): JSX.Element => {
   const {i18n} = useTranslation()
 
   const changeLanguage = (changeLanguageProps: ChangeLanguageProps): void => {
