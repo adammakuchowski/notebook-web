@@ -1,5 +1,6 @@
 {
   "login": {
+    "title": "Logowanie",
     "signIn": "Zaloguj się",
     "email": "Email",
     "password": "Hasło",

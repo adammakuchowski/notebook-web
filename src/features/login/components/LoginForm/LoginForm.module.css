@@ -1,0 +1,21 @@
+.container {
+    padding-bottom: 20px;
+    margin-top: 150px;
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+.dark {
+    background-color: #242424;
+}
+
+.light {
+    background-color: #FFFFFF;
+}
+
+.titleWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}

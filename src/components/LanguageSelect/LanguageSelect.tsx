@@ -16,9 +16,11 @@ export const LanguageSelect = (): JSX.Element => {
   return (
     <Select
       data={languageSelectData}
-      defaultValue={i18n.language}
+      defaultValue={i18n.language.includes('pl') ? 'pl' : 'en'}
       onChange={(value, option) => changeLanguage({value, option})}
       allowDeselect={false}
+      size='sm'
+      w={75}
     />
   )
 }

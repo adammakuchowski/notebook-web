@@ -1,0 +1,16 @@
+.topBarContainer {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #CED4DA;
+    margin-top: 10px;
+    padding-bottom: 10px;
+
+    .settings {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}

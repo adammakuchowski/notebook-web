@@ -1,3 +1,4 @@
+import cx from 'clsx'
 import {useNavigate} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
 import {useMutation} from '@tanstack/react-query'
@@ -8,14 +9,18 @@ import {
   Button,
   Box,
   Group,
-  Container
+  Container,
+  Title,
+  useMantineColorScheme
 } from '@mantine/core'
 
+import classes from './LoginForm.module.css'
 import {authApi} from 'api'
 
 export const LoginForm = (): JSX.Element => {
   const {t} = useTranslation()
   const navigate = useNavigate()
+  const {colorScheme} = useMantineColorScheme()
 
   const {mutate, isPending} = useMutation({
     mutationFn: authApi.loginUser,
@@ -46,8 +51,9 @@ export const LoginForm = (): JSX.Element => {
   })
 
   return (
-    <Container>
-      <Box maw={340} mx='auto'>
+    <Container className={cx(classes.container, classes[colorScheme])}>
+      <Box maw={340} mx='auto' mt={50}>
+        <Title order={2} className={classes.titleWrapper}>{t('login.title')}</Title>
         <form onSubmit={form.onSubmit(signIn)}>
           <TextInput label={t('login.email')} placeholder={t('login.email')} {...form.getInputProps('email')} />
           <PasswordInput mt='sm' label={t('login.password')} placeholder={t('login.password')} {...form.getInputProps('password')} />
