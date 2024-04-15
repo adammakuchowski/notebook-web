@@ -1,0 +1,21 @@
+.withSquaresWrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.leftSquareWrapper {
+    position: absolute;
+    top: 150px;
+    right: -200px;
+    transform: rotate(70deg);
+    z-index: -1;
+}
+
+.rightSquareWrapper {
+    position: absolute;
+    top: 500px;
+    left: -200px;
+    transform: rotate(-70deg);
+    z-index: -1;
+}

@@ -1,0 +1,11 @@
+.boxWrapper {
+    width: 500px;
+    height: 500px;
+    background-color: #1C7ED6;
+    border-radius: 30px;
+
+    @media (max-width: 1000px) {
+        width: 300px;
+        height: 300px;
+    }
+}

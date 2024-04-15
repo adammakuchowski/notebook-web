@@ -1,5 +1,6 @@
 {
   "login": {
+    "title": "Login",
     "signIn": "Sign in",
     "email": "Email",
     "password": "Password",
