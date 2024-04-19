@@ -1,4 +1,4 @@
-import {Box, Container} from '@mantine/core'
+import {Box, Container, Title} from '@mantine/core'
 
 import classes from './TopBar.module.css'
 import {LanguageSelect, ThemeModeButton} from 'components'
@@ -6,10 +6,12 @@ import {LanguageSelect, ThemeModeButton} from 'components'
 export const TopBar = (): JSX.Element => {
   return (
     <Container className={classes.topBarContainer} fluid>
-      <Box>LOGO</Box>
+      <Title className={classes.logo} order={1}>
+        Note.
+      </Title>
       <Box className={classes.settings}>
-        <ThemeModeButton/>
-        <LanguageSelect/>
+        <ThemeModeButton />
+        <LanguageSelect />
       </Box>
     </Container>
   )
