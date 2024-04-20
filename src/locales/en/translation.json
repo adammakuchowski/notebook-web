@@ -2,8 +2,18 @@
   "login": {
     "title": "Login",
     "signIn": "Sign in",
+    "logOut": "Log out",
     "email": "Email",
     "password": "Password",
     "forgotPassword": "Forgot password"
+  },
+  "notes" :{
+    "label": "Notes"
+  },
+  "tasks": {
+    "label": "Tasks"
+  },
+  "settings": {
+    "label": "Settings"
   }
 }
