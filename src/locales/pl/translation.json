@@ -2,8 +2,18 @@
   "login": {
     "title": "Logowanie",
     "signIn": "Zaloguj się",
+    "logOut": "Wyloguj się",
     "email": "Email",
     "password": "Hasło",
     "forgotPassword": "Zapomniałem hasła"
+  },
+  "notes" :{
+    "label": "Notatnik"
+  },
+  "tasks": {
+    "label": "Zadania"
+  },
+  "settings": {
+    "label": "Ustawienia"
   }
 }

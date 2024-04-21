@@ -1,6 +1,29 @@
 .boardContainer {
+    @mixin light {
+        background-color: #ededed;
+    }
+    
+    @mixin dark {
+        background-color: #2E2E2E;
+    }
+
     display: flex;
     height: 100vh;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.contentContainer {
+    @mixin light {
+        background-color: white;
+    }
+    
+    @mixin dark {
+        background-color: #242424;
+    }
+
+    width: 100%;
+    border-radius: 20px;
+    margin: 20px;
 }
