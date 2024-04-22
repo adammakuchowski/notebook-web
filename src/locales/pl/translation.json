@@ -7,13 +7,18 @@
     "password": "Hasło",
     "forgotPassword": "Zapomniałem hasła"
   },
+  "menu:": {
+    "notes": "Notatnik",
+    "tasks": "Zadania",
+    "settings": "Ustawienia"
+  },
   "notes" :{
-    "label": "Notatnik"
+    "title": "Notatnik"
   },
   "tasks": {
-    "label": "Zadania"
+    "title": "Zadania"
   },
   "settings": {
-    "label": "Ustawienia"
+    "title": "Ustawienia"
   }
 }

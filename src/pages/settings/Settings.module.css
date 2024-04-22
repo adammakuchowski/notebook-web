@@ -1,5 +1,3 @@
-.loginBoxWrapper {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
+.pageContainer {
+    height: 100%;
 }

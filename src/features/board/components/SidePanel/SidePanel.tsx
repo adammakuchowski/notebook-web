@@ -11,9 +11,9 @@ export const SidePanel = (): JSX.Element => {
   const {t} = useTranslation()
 
   const options: MenuOption[] = [
-    {icon: IconNotebook, label: `${t('notes.label')}`, path: '/board/notes'},
-    {icon: IconSubtask, label: `${t('tasks.label')}`, path: '/board/tasks'},
-    {icon: IconSettings, label: `${t('settings.label')}`, path: '/board/settings'}
+    {icon: IconNotebook, label: `${t('menu.notes')}`, path: '/board/notes'},
+    {icon: IconSubtask, label: `${t('menu.tasks')}`, path: '/board/tasks'},
+    {icon: IconSettings, label: `${t('menu.settings')}`, path: '/board/settings'}
   ]
 
   const navigate = useNavigate()

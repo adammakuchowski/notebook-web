@@ -7,13 +7,18 @@
     "password": "Password",
     "forgotPassword": "Forgot password"
   },
+  "menu": {
+    "notes": "Notes",
+    "tasks": "Tasks",
+    "settings": "Settings"
+  },
   "notes" :{
-    "label": "Notes"
+    "title": "Notes"
   },
   "tasks": {
-    "label": "Tasks"
+    "title": "Tasks"
   },
   "settings": {
-    "label": "Settings"
+    "title": "Settings"
   }
 }
