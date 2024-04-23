@@ -14,7 +14,8 @@
       "features/*": ["features/*"],
       "pages/*": ["pages/*"],
       "hooks/*": ["hooks/*"],
-      "hocs/*": ["hocs/*"]
+      "hocs/*": ["hocs/*"],
+      "layouts/*": ["layouts/*"]
     },
     
     /* Bundler mode */

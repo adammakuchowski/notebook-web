@@ -14,7 +14,8 @@ export default defineConfig({
       features: path.resolve(__dirname, './src/features'),
       pages: path.resolve(__dirname, './src/pages'),
       hooks: path.resolve(__dirname, './src/hooks'),
-      hocs: path.resolve(__dirname, './src/hocs')
+      hocs: path.resolve(__dirname, './src/hocs'),
+      layouts: path.resolve(__dirname, './src/layouts')
     }
   }
 })

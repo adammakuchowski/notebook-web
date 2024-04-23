@@ -15,15 +15,6 @@
 }
 
 .contentContainer {
-    @mixin light {
-        background-color: white;
-    }
-    
-    @mixin dark {
-        background-color: #242424;
-    }
-
     width: 100%;
-    border-radius: 20px;
     margin: 20px;
 }
