@@ -11,8 +11,8 @@ export const SidePanel = (): JSX.Element => {
   const {t} = useTranslation()
 
   const options: MenuOption[] = [
-    {icon: IconNotebook, label: `${t('menu.notes')}`, path: '/board/notes'},
     {icon: IconSubtask, label: `${t('menu.tasks')}`, path: '/board/tasks'},
+    {icon: IconNotebook, label: `${t('menu.notes')}`, path: '/board/notes'},
     {icon: IconSettings, label: `${t('menu.settings')}`, path: '/board/settings'}
   ]
 

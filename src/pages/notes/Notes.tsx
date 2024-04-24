@@ -1,12 +1,19 @@
 import {Box} from '@mantine/core'
+import {useTranslation} from 'react-i18next'
 
-// import classes from './Notes.module.css'
-// <Box className={classes.loginBoxWrapper}>
+import {Subpage} from 'layouts'
+import classes from './Notes.module.css'
 
 export const Notes = (): JSX.Element => {
+  const {t} = useTranslation()
+
   return (
-    <Box>
-      Notes
+    <Box className={classes.pageContainer}>
+      <Subpage title={t('notes.title')}>
+        <Box className={classes.settingsContainer}>
+
+        </Box>
+      </Subpage>
     </Box>
   )
 }

@@ -5,3 +5,7 @@ export type ChangeLanguageProps = {
     label: string;
   };
 }
+
+export type LanguageSelectProps = {
+  width: number;
+}

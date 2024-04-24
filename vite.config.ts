@@ -15,7 +15,8 @@ export default defineConfig({
       pages: path.resolve(__dirname, './src/pages'),
       hooks: path.resolve(__dirname, './src/hooks'),
       hocs: path.resolve(__dirname, './src/hocs'),
-      layouts: path.resolve(__dirname, './src/layouts')
+      layouts: path.resolve(__dirname, './src/layouts'),
+      types: path.resolve(__dirname, './src/types')
     }
   }
 })

@@ -7,7 +7,7 @@
     "password": "Hasło",
     "forgotPassword": "Zapomniałem hasła"
   },
-  "menu:": {
+  "menu": {
     "notes": "Notatnik",
     "tasks": "Zadania",
     "settings": "Ustawienia"
