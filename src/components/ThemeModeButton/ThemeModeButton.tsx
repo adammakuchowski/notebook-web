@@ -6,7 +6,7 @@ import {
 } from '@mantine/core'
 import {IconSun, IconMoon} from '@tabler/icons-react'
 import classes from './ThemeModeButton.module.css'
-import {Theme} from './constants'
+import {Theme} from 'types'
 
 export const ThemeModeButton = (): JSX.Element => {
   const {setColorScheme} = useMantineColorScheme()

@@ -1,3 +1,9 @@
 .pageContainer {
     height: 100%;
 }
+
+.settingsContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
