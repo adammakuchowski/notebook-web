@@ -1,0 +1,22 @@
+.columnContainer {
+    margin: 8px;
+    border-radius: 10px;
+
+    @mixin light {
+        /* background-color: #ededed; */
+        /* border: 1px solid #bbbbbb; */
+    }
+    
+    @mixin dark {
+        /* background-color: #2E2E2E; */
+        /* border: 1px solid #3e3e3e; */
+    }
+}
+
+.title {
+    padding: 8px;
+}
+
+.taskList {
+    padding: 8px;
+}
