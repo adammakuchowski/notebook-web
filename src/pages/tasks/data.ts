@@ -11,8 +11,13 @@ export const initData: InitKanbanData = {
     column1: {
       id: 'column1',
       title: 'To do',
-      taskIds: ['task1', 'task2', 'task3', 'task4']
+      taskIds: ['task1', 'task2', 'task3']
+    },
+    column2: {
+      id: 'column2',
+      title: 'In progess',
+      taskIds: ['task4']
     }
   },
-  columnOrder: ['column1']
+  columnOrder: ['column1', 'column2']
 }

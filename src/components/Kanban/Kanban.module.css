@@ -1,4 +1,11 @@
 .pageContainer {
-    /* background-color: red; */
-    width: 300px;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 50px;
 }
+
