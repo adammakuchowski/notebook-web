@@ -1,14 +1,45 @@
 import {useState} from 'react'
-import {DragDropContext} from 'react-beautiful-dnd'
+import {DragDropContext, DropResult} from 'react-beautiful-dnd'
 import classes from './Kanban.module.css'
 import {Column} from './Column'
 import {KanbanProps} from './types'
 
 export const Kanban = ({initData}: KanbanProps): JSX.Element => {
-  const [data] = useState(initData)
+  const [data, setData] = useState(initData)
 
-  const onDragEnd = (): void => {
-    console.log(123)
+  const onDragEnd = (result: DropResult): void => {
+    const {destination, source, draggableId} = result
+
+    if (!destination) {
+      return
+    }
+
+    if (
+      destination.index === source.index &&
+      destination.droppableId === source.droppableId
+    ) {
+      return
+    }
+
+    const column = data.columns[source.droppableId]
+    const newTaskIds = [...column.taskIds]
+    newTaskIds.splice(source.index, 1)
+    newTaskIds.splice(destination.index, 0, draggableId)
+
+    const newColumn = {
+      ...column,
+      taskIds: newTaskIds
+    }
+
+    const newState = {
+      ...data,
+      columns: {
+        ...data.columns,
+        [newColumn.id]: newColumn
+      }
+    }
+
+    setData(newState)
   }
 
   return (
