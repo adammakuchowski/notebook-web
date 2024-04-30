@@ -1,3 +1,4 @@
+import {DroppableProvided} from 'react-beautiful-dnd'
 import classes from './Column.module.css'
 import {ColumnType, TaskType} from '../types'
 import {Task} from '../Task'
@@ -13,7 +14,7 @@ export const Column = ({column, tasks}: ColumnProps): JSX.Element => {
         <div className={classes.columnContainer}>
             <h3 className={classes.title}>{column.title}</h3>
             <StrictModeDroppable droppableId={column.id}>
-                {(provided) => (
+                {(provided: DroppableProvided) => (
                     <div
                         ref={provided.innerRef}
                         {...provided.droppableProps}

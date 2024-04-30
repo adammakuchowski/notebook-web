@@ -1,4 +1,8 @@
-import {Draggable} from 'react-beautiful-dnd'
+import {
+  Draggable,
+  DraggableProvided,
+  DraggableStateSnapshot
+} from 'react-beautiful-dnd'
 import classes from './Task.module.css'
 import {TaskType} from '../types'
 
@@ -14,7 +18,7 @@ export const Task = ({task, index}: TaskProps): JSX.Element => {
             index={index}
             key={task.id}
         >
-            {(provided, snapshot) => (
+            {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
                 <div
                     // TODO: find another way
                     className={snapshot.isDragging ? classes.taskDraggingContainer : classes.taskContainer}
