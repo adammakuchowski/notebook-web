@@ -11,6 +11,7 @@ type ColumnProps = {
 
 export const Column = ({column, tasks}: ColumnProps): JSX.Element => {
   return (
+        // TODO: change tags
         <div className={classes.columnContainer}>
             <h3 className={classes.title}>{column.title}</h3>
             <StrictModeDroppable droppableId={column.id}>

@@ -19,6 +19,7 @@ export const Task = ({task, index}: TaskProps): JSX.Element => {
             key={task.id}
         >
             {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
+                // TODO: change tags
                 <div
                     // TODO: find another way
                     className={snapshot.isDragging ? classes.taskDraggingContainer : classes.taskContainer}

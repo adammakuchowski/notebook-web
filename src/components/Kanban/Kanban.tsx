@@ -42,6 +42,7 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
     setData(newState)
   }
 
+  // TODO: change tags
   return (
     <DragDropContext
       onDragEnd={onDragEnd}
