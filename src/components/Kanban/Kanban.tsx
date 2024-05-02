@@ -21,21 +21,54 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
       return
     }
 
-    const column = data.columns[source.droppableId]
-    const newTaskIds = [...column.taskIds]
-    newTaskIds.splice(source.index, 1)
-    newTaskIds.splice(destination.index, 0, draggableId)
+    const startColumn = data.columns[source.droppableId]
+    const finishColumn = data.columns[destination.droppableId]
 
-    const newColumn = {
-      ...column,
-      taskIds: newTaskIds
+    if (startColumn === finishColumn) {
+      const newTaskIds = [...startColumn.taskIds]
+      newTaskIds.splice(source.index, 1)
+      newTaskIds.splice(destination.index, 0, draggableId)
+
+      const newColumn = {
+        ...startColumn,
+        taskIds: newTaskIds
+      }
+
+      const newState = {
+        ...data,
+        columns: {
+          ...data.columns,
+          [newColumn.id]: newColumn
+        }
+      }
+
+      setData(newState)
+
+      return
+    }
+
+    const startTaskIds = [...startColumn.taskIds]
+    startTaskIds.splice(source.index, 1)
+
+    const newStart = {
+      ...startColumn,
+      taskIds: startTaskIds
+    }
+
+    const finishTaskIds = [...finishColumn.taskIds]
+    finishTaskIds.splice(destination.index, 0, draggableId)
+
+    const newFinish = {
+      ...finishColumn,
+      taskIds: finishTaskIds
     }
 
     const newState = {
       ...data,
       columns: {
         ...data.columns,
-        [newColumn.id]: newColumn
+        [newStart.id]: newStart,
+        [newFinish.id]: newFinish
       }
     }
 

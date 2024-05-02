@@ -10,7 +10,7 @@ export const Tasks = (): JSX.Element => {
 
   return (
     <Box className={classes.pageContainer}>
-      <Subpage title={t('tasks.title')}>
+      <Subpage title={t('tasks.title')} actionButton actionButtonTitle={t('tasks.actionButton')} actionButtonCallback={() => console.log(123)}>
         <Box className={classes.settingsContainer}>
           <Kanban initData={initData}/>
         </Box>

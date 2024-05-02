@@ -16,9 +16,14 @@
     "title": "Notes"
   },
   "tasks": {
-    "title": "Tasks"
+    "title": "Tasks",
+    "actionButton": "Add task"
   },
   "settings": {
     "title": "Settings"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
   }
 }
