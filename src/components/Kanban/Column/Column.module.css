@@ -3,20 +3,41 @@
     border-radius: 10px;
     height: 100%;
     width: 20%;
-
-    @mixin light {
-        border: 2px solid #d4d4d4;
-    }
-    
-    @mixin dark {
-        border: 2px solid #3b3b3b;
-    }
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
     padding: 8px;
+    border-radius: 10px;
+
+    @mixin light {
+        border-bottom: 2px solid #d4d4d4;
+    }
+    
+    @mixin dark {
+        border-bottom: 2px solid #3b3b3b;
+    }
 }
 
 .taskList {
-    padding: 8px;
+    padding-top: 8px;
+    border-radius: 10px;
+    height: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.activeTaskList {
+    padding-top: 8px;
+    border-radius: 10px;
+    height: 100%;
+    transition: background-color 0.3s ease;
+
+    @mixin light {
+        background-color: #E4F1FC;
+    }
+    
+    @mixin dark {
+        background-color: #24394B;
+    }
 }

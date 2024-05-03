@@ -16,9 +16,14 @@
     "title": "Notatnik"
   },
   "tasks": {
-    "title": "Zadania"
+    "title": "Zadania",
+    "actionButton": "Dodaj zadanie"
   },
   "settings": {
     "title": "Ustawienia"
+  },
+  "theme": {
+    "light": "Jasny",
+    "dark": "Ciemny"
   }
 }
