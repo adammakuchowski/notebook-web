@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .ts,.tsx .",
-    "lint:fix": "eslint --fix --ext .ts,.tsx ."
+    "lint:fix": "eslint --fix --ext .ts,.tsx .",
+    "prettier": "npx prettier . --write"
   },
   "dependencies": {
     "@mantine/core": "^7.6.2",
@@ -39,6 +40,7 @@
     "@typescript-eslint/eslint-plugin": "^6.18.0",
     "@vitejs/plugin-react": "^4.0.3",
     "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard-with-typescript": "^43.0.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.1",
@@ -47,6 +49,7 @@
     "postcss": "^8.4.37",
     "postcss-preset-mantine": "^1.14.0",
     "postcss-simple-vars": "^7.0.1",
+    "prettier": "3.2.5",
     "typescript": "^5.3.3",
     "vite": "^4.4.5"
   }

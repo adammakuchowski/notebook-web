@@ -5,28 +5,33 @@ import {Task} from '../Task'
 import {StrictModeDroppable} from '../StrictModeDroppable/StrictModeDroppable'
 
 type ColumnProps = {
-  column: ColumnType;
-  tasks: TaskType[];
+  column: ColumnType
+  tasks: TaskType[]
 }
 
 export const Column = ({column, tasks}: ColumnProps): JSX.Element => {
   return (
-        // TODO: change tags
-        <div className={classes.columnContainer}>
-            <h3 className={classes.title}>{column.title}</h3>
-            <StrictModeDroppable droppableId={column.id}>
-                {(provided: DroppableProvided, snapshot: DroppableStateSnapshot) => (
-                    <div
-                        ref={provided.innerRef}
-                        {...provided.droppableProps}
-                        className={snapshot.isDraggingOver ? classes.activeTaskList : classes.taskList}
-                    >
-                        {tasks.map((task, index) => <Task key={task.id} task={task} index={index} />)}
-                        {provided.placeholder}
-                    </div>
-                )}
-            </StrictModeDroppable>
-
-        </div>
+    // TODO: change tags
+    <div className={classes.columnContainer}>
+      <h3 className={classes.title}>{column.title}</h3>
+      <StrictModeDroppable droppableId={column.id}>
+        {(provided: DroppableProvided, snapshot: DroppableStateSnapshot) => (
+          <div
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+            className={
+              snapshot.isDraggingOver
+                ? classes.activeTaskList
+                : classes.taskList
+            }
+          >
+            {tasks.map((task, index) => (
+              <Task key={task.id} task={task} index={index} />
+            ))}
+            {provided.placeholder}
+          </div>
+        )}
+      </StrictModeDroppable>
+    </div>
   )
 }

@@ -1,56 +1,56 @@
 .sidePanelContainer {
-    @mixin light {
-        background-color: white;
-    }
-    
-    @mixin dark {
-        background-color: #242424;
-    }
+  @mixin light {
+    background-color: white;
+  }
 
-    display: flex;
-    min-width: 300px;
-    padding: 0;
-    margin: 0;
-    flex-direction: column;
-    gap: 50px;
+  @mixin dark {
+    background-color: #242424;
+  }
+
+  display: flex;
+  min-width: 300px;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .logo {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .menuOptionsWrapper {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .menuOptions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-direction: column;
+  width: 100%;
 }
 
 .root {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .label {
-    font-size: 16px;
-    font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .logout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
 }

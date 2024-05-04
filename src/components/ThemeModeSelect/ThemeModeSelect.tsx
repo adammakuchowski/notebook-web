@@ -10,18 +10,22 @@ export const ThemeModeSelect = (): JSX.Element => {
   const themeSelectData = [
     {
       value: 'light',
-      label: t('theme.light')
+      label: t('theme.light'),
     },
     {
       value: 'dark',
-      label: t('theme.dark')
-    }
+      label: t('theme.dark'),
+    },
   ]
 
   // TODO: after changing language, render again
 
-  const changeThemeMode = (changeThemeModeProps: ChangeThemeModeProps): void => {
-    const {option: {value}} = changeThemeModeProps
+  const changeThemeMode = (
+    changeThemeModeProps: ChangeThemeModeProps,
+  ): void => {
+    const {
+      option: {value},
+    } = changeThemeModeProps
 
     setColorScheme(value as Theme)
   }
@@ -32,7 +36,7 @@ export const ThemeModeSelect = (): JSX.Element => {
       defaultValue={colorScheme}
       onChange={(value, option) => changeThemeMode({value, option})}
       allowDeselect={false}
-      size='sm'
+      size="sm"
       w={100}
     />
   )

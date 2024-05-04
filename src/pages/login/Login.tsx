@@ -5,8 +5,8 @@ import classes from './Login.module.css'
 export const Login = (): JSX.Element => {
   return (
     <Box className={classes.loginBoxWrapper}>
-      <TopBar/>
-      <LoginForm/>
+      <TopBar />
+      <LoginForm />
     </Box>
   )
 }

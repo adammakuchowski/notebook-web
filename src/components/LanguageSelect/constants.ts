@@ -1,10 +1,10 @@
 export const languageSelectData = [
   {
     value: 'en',
-    label: 'EN'
+    label: 'EN',
   },
   {
     value: 'pl',
-    label: 'PL'
-  }
+    label: 'PL',
+  },
 ]

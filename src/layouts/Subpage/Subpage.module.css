@@ -1,27 +1,27 @@
 .pageContainer {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
 }
 
 .titleTopBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
 }
 
 .contentContainer {
-    @mixin light {
-        background-color: white;
-    }
-    
-    @mixin dark {
-        background-color: #242424;
-    }
+  @mixin light {
+    background-color: white;
+  }
 
-    border-radius: 20px;
-    height: 100%;
+  @mixin dark {
+    background-color: #242424;
+  }
+
+  border-radius: 20px;
+  height: 100%;
 }

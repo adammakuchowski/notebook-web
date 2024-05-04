@@ -1,7 +1,7 @@
 export type ChangeThemeModeProps = {
-  value: string | null;
+  value: string | null
   option: {
-    value: string;
-    label: string;
-  };
+    value: string
+    label: string
+  }
 }
