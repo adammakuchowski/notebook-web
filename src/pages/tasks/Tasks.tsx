@@ -10,9 +10,14 @@ export const Tasks = (): JSX.Element => {
 
   return (
     <Box className={classes.pageContainer}>
-      <Subpage title={t('tasks.title')} actionButton actionButtonTitle={t('tasks.actionButton')} actionButtonCallback={() => console.log(123)}>
+      <Subpage
+        title={t('tasks.title')}
+        actionButton
+        actionButtonTitle={t('tasks.actionButton')}
+        actionButtonCallback={() => console.log(123)}
+      >
         <Box className={classes.settingsContainer}>
-          <Kanban initData={initData}/>
+          <Kanban initData={initData} />
         </Box>
       </Subpage>
     </Box>

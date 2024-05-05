@@ -12,7 +12,7 @@ export const Settings = (): JSX.Element => {
     <Box className={classes.pageContainer}>
       <Subpage title={t('settings.title')}>
         <Box className={classes.settingsContainer}>
-          <SettingsPanel attributes={settingsAttributes}/>
+          <SettingsPanel attributes={settingsAttributes} />
         </Box>
       </Subpage>
     </Box>

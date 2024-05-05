@@ -7,19 +7,19 @@ export const settingsAttributes: Attribute[] = [
     fieldName: 'language',
     translations: {
       pl: 'Język',
-      en: 'Language'
+      en: 'Language',
     },
     ControlComponent: LanguageSelect,
     controlComponentProps: {
-      width: 100
-    }
+      width: 100,
+    },
   },
   {
     fieldName: 'themeMode',
     translations: {
       pl: 'Tryb motywu',
-      en: 'Theme mode'
+      en: 'Theme mode',
     },
-    ControlComponent: ThemeModeSelect
-  }
+    ControlComponent: ThemeModeSelect,
+  },
 ]

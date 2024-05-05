@@ -11,7 +11,7 @@ import {
   Group,
   Container,
   Title,
-  useMantineColorScheme
+  useMantineColorScheme,
 } from '@mantine/core'
 
 import classes from './LoginForm.module.css'
@@ -25,7 +25,9 @@ export const LoginForm = (): JSX.Element => {
   const {mutate, isPending} = useMutation({
     mutationFn: authApi.loginUser,
     onSuccess: (response) => {
-      const {data: {token, refreshToken}} = response
+      const {
+        data: {token, refreshToken},
+      } = response
 
       localStorage.setItem('token', token)
       localStorage.setItem('refreshToken', refreshToken)
@@ -33,7 +35,7 @@ export const LoginForm = (): JSX.Element => {
     },
     onError: () => {
       // TODO: init login error notification
-    }
+    },
   })
 
   const signIn = async (): Promise<void> => {
@@ -46,23 +48,35 @@ export const LoginForm = (): JSX.Element => {
 
     validate: {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-      password: (value) => (value.length < 2 ? 'Name must have at least 2 letters' : null)
-    }
+      password: (value) =>
+        value.length < 2 ? 'Name must have at least 2 letters' : null,
+    },
   })
 
   return (
     <Container className={cx(classes.container, classes[colorScheme])}>
-      <Box maw={340} mx='auto' mt={50}>
-        <Title order={2} className={classes.titleWrapper}>{t('login.title')}</Title>
+      <Box maw={340} mx="auto" mt={50}>
+        <Title order={2} className={classes.titleWrapper}>
+          {t('login.title')}
+        </Title>
         <form onSubmit={form.onSubmit(signIn)}>
-          <TextInput label={t('login.email')} placeholder={t('login.email')} {...form.getInputProps('email')} />
-          <PasswordInput mt='sm' label={t('login.password')} placeholder={t('login.password')} {...form.getInputProps('password')} />
-          <Group justify='flex-end'>
-            <Button size='compact-xs' variant='default' justify='right' mt='10'>
+          <TextInput
+            label={t('login.email')}
+            placeholder={t('login.email')}
+            {...form.getInputProps('email')}
+          />
+          <PasswordInput
+            mt="sm"
+            label={t('login.password')}
+            placeholder={t('login.password')}
+            {...form.getInputProps('password')}
+          />
+          <Group justify="flex-end">
+            <Button size="compact-xs" variant="default" justify="right" mt="10">
               {t('login.forgotPassword')}
             </Button>
           </Group>
-          <Button type='submit' mt='xl' fullWidth loading={isPending}>
+          <Button type="submit" mt="xl" fullWidth loading={isPending}>
             {t('login.signIn')}
           </Button>
         </form>

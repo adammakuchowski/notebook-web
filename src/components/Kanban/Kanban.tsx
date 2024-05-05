@@ -31,15 +31,15 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
 
       const newColumn = {
         ...startColumn,
-        taskIds: newTaskIds
+        taskIds: newTaskIds,
       }
 
       const newState = {
         ...data,
         columns: {
           ...data.columns,
-          [newColumn.id]: newColumn
-        }
+          [newColumn.id]: newColumn,
+        },
       }
 
       setData(newState)
@@ -52,7 +52,7 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
 
     const newStart = {
       ...startColumn,
-      taskIds: startTaskIds
+      taskIds: startTaskIds,
     }
 
     const finishTaskIds = [...finishColumn.taskIds]
@@ -60,7 +60,7 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
 
     const newFinish = {
       ...finishColumn,
-      taskIds: finishTaskIds
+      taskIds: finishTaskIds,
     }
 
     const newState = {
@@ -68,8 +68,8 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
       columns: {
         ...data.columns,
         [newStart.id]: newStart,
-        [newFinish.id]: newFinish
-      }
+        [newFinish.id]: newFinish,
+      },
     }
 
     setData(newState)
@@ -77,13 +77,11 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
 
   // TODO: change tags
   return (
-    <DragDropContext
-      onDragEnd={onDragEnd}
-    >
+    <DragDropContext onDragEnd={onDragEnd}>
       <div className={classes.pageContainer}>
-        {data.columnOrder.map(columnId => {
+        {data.columnOrder.map((columnId) => {
           const column = data.columns[columnId]
-          const tasks = column.taskIds.map(taskId => data.tasks[taskId])
+          const tasks = column.taskIds.map((taskId) => data.tasks[taskId])
 
           console.log('column', column)
           console.log('tasks', tasks)
@@ -92,6 +90,5 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
         })}
       </div>
     </DragDropContext>
-
   )
 }

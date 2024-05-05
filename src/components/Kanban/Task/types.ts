@@ -1,6 +1,6 @@
 import {TaskType} from '../types'
 
 export type TaskProps = {
-  task: TaskType;
-  index: number;
+  task: TaskType
+  index: number
 }

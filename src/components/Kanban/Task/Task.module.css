@@ -1,44 +1,43 @@
-.taskContainer{
-    border-radius: 10px;
-    padding: 8px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 20px;
-    font-size: 16px;
-    font-weight: bold;
+.taskContainer {
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: bold;
 
-    @mixin light {
-        border: 1px solid #d4d4d4;
-        background-color: #FFFFFF;
-    }
-    
-    @mixin dark {
-        border: 1px solid #3b3b3b;
-        background-color: #242424;
-    }
+  @mixin light {
+    border: 1px solid #d4d4d4;
+    background-color: #ffffff;
+  }
+
+  @mixin dark {
+    border: 1px solid #3b3b3b;
+    background-color: #242424;
+  }
 }
 
-.taskDraggingContainer{
-    border-radius: 10px;
-    padding: 8px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 20px;
-    font-size: 16px;
-    font-weight: bold;
+.taskDraggingContainer {
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: bold;
 
+  @mixin light {
+    border: 1px solid #d2f7d2;
+    background-color: #d2f8d2;
+  }
 
-    @mixin light {
-        border: 1px solid #d2f7d2;
-        background-color: #d2f8d2;
-    }
-    
-    @mixin dark {
-        border: 1px solid #0c430c;
-        background-color: #072d07;
-    }
+  @mixin dark {
+    border: 1px solid #0c430c;
+    background-color: #072d07;
+  }
 }

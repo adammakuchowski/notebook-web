@@ -19,13 +19,15 @@ export const useAuth = (): UseAuth => {
         throw new Error('Error while refresh user token')
       }
 
-      const {data: {token: newToken, refreshToken: newRefreshToken}} = response
+      const {
+        data: {token: newToken, refreshToken: newRefreshToken},
+      } = response
       localStorage.setItem('token', newToken)
       localStorage.setItem('refreshToken', newRefreshToken)
     },
     onError: () => {
       // TODO: init login error notification
-    }
+    },
   })
 
   const redirectToLoginPage = (): void => {
@@ -61,11 +63,13 @@ export const useAuth = (): UseAuth => {
   }
 
   useEffect(() => {
-    checkToken().then(() => {
-      setIsTokenValid(true)
-    }).catch(() => {
-      redirectToLoginPage()
-    })
+    checkToken()
+      .then(() => {
+        setIsTokenValid(true)
+      })
+      .catch(() => {
+        redirectToLoginPage()
+      })
   }, [navigate, isTokenValid])
 
   return {isTokenValid}

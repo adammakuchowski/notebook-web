@@ -1,11 +1,11 @@
 export type ChangeLanguageProps = {
-  value: string | null;
+  value: string | null
   option: {
-    value: string;
-    label: string;
-  };
+    value: string
+    label: string
+  }
 }
 
 export type LanguageSelectProps = {
-  width: number;
+  width: number
 }

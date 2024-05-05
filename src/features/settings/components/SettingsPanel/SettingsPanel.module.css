@@ -1,19 +1,19 @@
 .optionsContainer {
-    height: 100%;
-    width: 33%;
-    padding: 40px 60px;
-    display: flex;
-    gap: 50px;
-    flex-direction: column;
+  height: 100%;
+  width: 33%;
+  padding: 40px 60px;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
 }
 
 .controlTypeWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
 }
 
 .labelWrapper {
-    font-weight: bold;
+  font-weight: bold;
 }

@@ -1,3 +1,3 @@
 export type UseAuth = {
-  isTokenValid: boolean;
+  isTokenValid: boolean
 }
