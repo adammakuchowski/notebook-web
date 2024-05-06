@@ -1,8 +1,8 @@
 import {DroppableProvided, DroppableStateSnapshot} from 'react-beautiful-dnd'
 import classes from './Column.module.css'
 import {ColumnType, TaskType} from '../types'
-import {Task} from '../Task'
-import {StrictModeDroppable} from '../StrictModeDroppable/StrictModeDroppable'
+import {Task} from '../task_temp'
+import {StrictModeDroppable} from '../strictModeDroppable_temp/StrictModeDroppable'
 
 type ColumnProps = {
   column: ColumnType

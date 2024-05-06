@@ -1,1 +1,1 @@
-export {Subpage} from './Subpage'
+export {Subpage} from './subpage_temp'
