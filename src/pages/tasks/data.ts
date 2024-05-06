@@ -1,4 +1,4 @@
-import {InitKanbanData} from 'components/Kanban'
+import {InitKanbanData} from 'components/kanban'
 
 export const initData: InitKanbanData = {
   tasks: {

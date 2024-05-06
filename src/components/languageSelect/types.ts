@@ -7,5 +7,5 @@ export type ChangeLanguageProps = {
 }
 
 export type LanguageSelectProps = {
-  width: number
+  width?: number
 }

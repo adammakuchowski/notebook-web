@@ -1,5 +1,5 @@
-import {LanguageSelect} from 'components/languageSelect_temp'
-import {ThemeModeSelect} from 'components/themeModeSelect_temp'
+import {LanguageSelect} from 'components/languageSelect'
+import {ThemeModeSelect} from 'components/themeModeSelect'
 import {Attribute} from 'types'
 
 export const settingsAttributes: Attribute[] = [

@@ -1,1 +1,1 @@
-export {SettingsPanel} from './components/settingsPanel_temp'
+export {SettingsPanel} from './components/settingsPanel'

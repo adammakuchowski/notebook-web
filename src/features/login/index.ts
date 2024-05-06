@@ -1,2 +1,2 @@
-export {LoginForm} from './components/loginForm_temp'
-export {TopBar} from './components/topBar_temp'
+export {LoginForm} from './components/loginForm'
+export {TopBar} from './components/topBar'

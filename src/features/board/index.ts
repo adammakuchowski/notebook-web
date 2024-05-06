@@ -1,1 +1,1 @@
-export {SidePanel} from './components/sidePanel_temp/SidePanel'
+export {SidePanel} from './components/sidePanel/SidePanel'
