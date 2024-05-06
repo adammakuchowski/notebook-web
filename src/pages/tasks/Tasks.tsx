@@ -1,7 +1,7 @@
 import {Box} from '@mantine/core'
 import {useTranslation} from 'react-i18next'
 import {Subpage} from 'layouts'
-import {Kanban} from 'components/Kanban'
+import {Kanban} from 'components/kanban_temp'
 import classes from './Tasks.module.css'
 import {initData} from './data'
 
