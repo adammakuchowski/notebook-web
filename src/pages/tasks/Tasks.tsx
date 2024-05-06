@@ -1,7 +1,7 @@
 import {Box} from '@mantine/core'
 import {useTranslation} from 'react-i18next'
 import {Subpage} from 'layouts'
-import {Kanban} from 'components/kanban_temp'
+import {Kanban} from 'components/kanban'
 import classes from './Tasks.module.css'
 import {initData} from './data'
 
@@ -14,6 +14,7 @@ export const Tasks = (): JSX.Element => {
         title={t('tasks.title')}
         actionButton
         actionButtonTitle={t('tasks.actionButton')}
+        // TODO
         actionButtonCallback={() => console.log(123)}
       >
         <Box className={classes.settingsContainer}>

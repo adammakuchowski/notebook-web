@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {DragDropContext, DropResult} from 'react-beautiful-dnd'
 import classes from './Kanban.module.css'
-import {Column} from './column_temp'
+import {Column} from './column'
 import {KanbanProps} from './types'
 
 export const Kanban = ({initData}: KanbanProps): JSX.Element => {
