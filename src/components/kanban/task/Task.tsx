@@ -37,7 +37,7 @@ export const Task = ({task, index}: TaskProps): JSX.Element => (
         ref={provided.innerRef}
       >
         <TaskDetailsButton />
-        {task.content}
+        {task.title}
       </div>
     )}
   </Draggable>

@@ -1,6 +1,6 @@
 export type TaskType = {
   id: string
-  content: string
+  title: string
 }
 
 export type ColumnType = {
