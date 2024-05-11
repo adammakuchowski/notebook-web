@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {DragDropContext, DropResult} from 'react-beautiful-dnd'
+import {Box} from '@mantine/core'
 import classes from './Kanban.module.css'
 import {Column} from './column'
 import {KanbanProps} from './types'
@@ -75,10 +76,9 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
     setData(newState)
   }
 
-  // TODO: change tags
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <div className={classes.pageContainer}>
+      <Box className={classes.pageContainer}>
         {data.columnOrder.map((columnId) => {
           const column = data.columns[columnId]
           const tasks = column.taskIds.map((taskId) => data.tasks[taskId])
@@ -88,7 +88,7 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
 
           return <Column key={column.id} column={column} tasks={tasks} />
         })}
-      </div>
+      </Box>
     </DragDropContext>
   )
 }
