@@ -11,6 +11,8 @@ type ColumnProps = {
 }
 
 export const Column = ({column, tasks}: ColumnProps): JSX.Element => {
+  const {t} = useTranslation()
+
   return (
     <Box className={classes.columnContainer}>
       <Title order={4} className={classes.title}>{column.title}</Title>
