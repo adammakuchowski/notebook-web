@@ -15,7 +15,7 @@ import {
 } from '@mantine/core'
 
 import classes from './LoginForm.module.css'
-import {authApi} from 'api'
+import {userApi} from 'api'
 
 export const LoginForm = (): JSX.Element => {
   const {t} = useTranslation()
@@ -23,7 +23,7 @@ export const LoginForm = (): JSX.Element => {
   const {colorScheme} = useMantineColorScheme()
 
   const {mutate, isPending} = useMutation({
-    mutationFn: authApi.loginUser,
+    mutationFn: userApi.loginUser,
     onSuccess: (response) => {
       const {
         data: {token, refreshToken},

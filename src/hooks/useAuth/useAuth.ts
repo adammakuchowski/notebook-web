@@ -4,7 +4,7 @@ import {jwtDecode} from 'jwt-decode'
 import moment from 'moment'
 import {useMutation} from '@tanstack/react-query'
 
-import {authApi} from 'api'
+import {userApi} from 'api'
 import {UseAuth} from './types'
 
 export const useAuth = (): UseAuth => {
@@ -13,7 +13,7 @@ export const useAuth = (): UseAuth => {
 
   // isPending
   const {mutate} = useMutation({
-    mutationFn: authApi.refreshUserToken,
+    mutationFn: userApi.refreshUserToken,
     onSuccess: (response) => {
       if (!response || response.status !== 201) {
         throw new Error('Error while refresh user token')
