@@ -3,7 +3,7 @@ import {
   DraggableProvided,
   DraggableStateSnapshot,
 } from 'react-beautiful-dnd'
-import {ActionIcon} from '@mantine/core'
+import {ActionIcon, Box} from '@mantine/core'
 import {IconArrowsMaximize} from '@tabler/icons-react'
 import classes from './Task.module.css'
 import {TaskProps} from './types'
@@ -24,8 +24,7 @@ const TaskDetailsButton = (): JSX.Element => {
 export const Task = ({task, index}: TaskProps): JSX.Element => (
   <Draggable draggableId={task.id} index={index} key={task.id}>
     {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
-      // TODO: change tags
-      <div
+      <Box
         // TODO: find another way
         className={
           snapshot.isDragging
@@ -37,8 +36,8 @@ export const Task = ({task, index}: TaskProps): JSX.Element => (
         ref={provided.innerRef}
       >
         <TaskDetailsButton />
-        {task.title}
-      </div>
+        {task.content}
+      </Box>
     )}
   </Draggable>
 )

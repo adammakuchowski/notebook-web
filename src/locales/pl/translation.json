@@ -25,5 +25,15 @@
   "theme": {
     "light": "Jasny",
     "dark": "Ciemny"
+  },
+  "kanban": {
+    "column": {
+      "title": {
+        "toDo": "Do zrobienia",
+        "blocked": "Zablokowane",
+        "inProgess": "Realizowane",
+        "done": "Zakończone"
+      }
+    }
   }
 }

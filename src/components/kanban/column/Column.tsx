@@ -1,4 +1,5 @@
 import {DroppableProvided, DroppableStateSnapshot} from 'react-beautiful-dnd'
+import {Box, Title} from '@mantine/core'
 import classes from './Column.module.css'
 import {ColumnType, TaskType} from '../types'
 import {Task} from '../task'
@@ -10,13 +11,14 @@ type ColumnProps = {
 }
 
 export const Column = ({column, tasks}: ColumnProps): JSX.Element => {
+  const {t} = useTranslation()
+
   return (
-    // TODO: change tags
-    <div className={classes.columnContainer}>
-      <h3 className={classes.title}>{column.title}</h3>
+    <Box className={classes.columnContainer}>
+      <Title order={4} className={classes.title}>{column.title}</Title>
       <StrictModeDroppable droppableId={column.id}>
         {(provided: DroppableProvided, snapshot: DroppableStateSnapshot) => (
-          <div
+          <Box
             ref={provided.innerRef}
             {...provided.droppableProps}
             className={
@@ -29,9 +31,9 @@ export const Column = ({column, tasks}: ColumnProps): JSX.Element => {
               <Task key={task.id} task={task} index={index} />
             ))}
             {provided.placeholder}
-          </div>
+          </Box>
         )}
       </StrictModeDroppable>
-    </div>
+    </Box>
   )
 }

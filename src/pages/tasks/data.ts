@@ -12,22 +12,22 @@ export const initData: InitKanbanData = {
   columns: {
     column1: {
       id: 'column1',
-      title: 'To do',
+      title: 'toDo',
       taskIds: ['task1', 'task2', 'task3'],
     },
     column2: {
       id: 'column2',
-      title: 'Blocked',
+      title: 'blocked',
       taskIds: ['task4'],
     },
     column3: {
       id: 'column3',
-      title: 'In progess',
+      title: 'inProgess',
       taskIds: ['task5'],
     },
     column4: {
       id: 'column4',
-      title: 'Done',
+      title: 'done',
       taskIds: ['task6'],
     },
   },
