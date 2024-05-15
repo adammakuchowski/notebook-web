@@ -1,6 +1,6 @@
-import {InitKanbanData} from 'components/kanban'
+import {KanbanTasks} from 'types'
 
-export const initData: InitKanbanData = {
+export const initData: KanbanTasks = {
   tasks: {
     task1: {id: 'task1', title: 'Take out'},
     task2: {id: 'task2', title: 'Make breakfest'},

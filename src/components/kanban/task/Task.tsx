@@ -6,7 +6,7 @@ import {
 import {ActionIcon, Box} from '@mantine/core'
 import {IconArrowsMaximize} from '@tabler/icons-react'
 import classes from './Task.module.css'
-import {TaskProps} from './types'
+import {TaskProps} from '../types'
 
 const TaskDetailsButton = (): JSX.Element => {
   const openTaskDetails = (): void => {
@@ -36,7 +36,7 @@ export const Task = ({task, index}: TaskProps): JSX.Element => (
         ref={provided.innerRef}
       >
         <TaskDetailsButton />
-        {task.content}
+        {task.title}
       </Box>
     )}
   </Draggable>

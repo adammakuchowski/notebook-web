@@ -1,2 +1,4 @@
-export type {Attribute} from './common'
-export {Theme} from './common'
+export type {Attribute} from './attribute'
+export {Theme} from './theme'
+
+export type {TaskType, ColumnType, KanbanTasks} from './kanban'

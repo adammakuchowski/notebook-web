@@ -6,6 +6,7 @@ export const Subpage = ({
   children,
   title,
   actionButton,
+  actionButtonDisabled,
   actionButtonTitle,
   actionButtonCallback,
 }: SubpageProps): JSX.Element => (
@@ -13,7 +14,11 @@ export const Subpage = ({
     <Box className={classes.titleTopBar}>
       <Title order={2}>{title}</Title>
       {actionButton ? (
-        <Button variant="filled" onClick={actionButtonCallback}>
+        <Button
+          variant="filled"
+          onClick={actionButtonCallback}
+          disabled={actionButtonDisabled}
+        >
           {actionButtonTitle}
         </Button>
       ) : null}

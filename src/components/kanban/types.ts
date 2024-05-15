@@ -1,20 +1,15 @@
-export type TaskType = {
-  id: string
-  title: string
-}
-
-export type ColumnType = {
-  id: string
-  title: string
-  taskIds: string[]
-}
-
-export type InitKanbanData = {
-  tasks: Record<string, TaskType>
-  columns: Record<string, ColumnType>
-  columnOrder: string[]
-}
+import {ColumnType, KanbanTasks, TaskType} from 'types'
 
 export type KanbanProps = {
-  initData: InitKanbanData
+  initData: KanbanTasks
+}
+
+export type ColumnProps = {
+  column: ColumnType
+  tasks: TaskType[]
+}
+
+export type TaskProps = {
+  task: TaskType
+  index: number
 }
