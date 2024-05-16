@@ -31,7 +31,7 @@
       "title": {
         "toDo": "Do zrobienia",
         "blocked": "Zablokowane",
-        "inProgess": "Realizowane",
+        "inProgress": "Realizowane",
         "done": "Zakończone"
       }
     }

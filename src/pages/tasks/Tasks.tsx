@@ -17,7 +17,7 @@ export const Tasks = (): JSX.Element => {
   }
 
   const {isPending, isError, data} = useQuery({
-    queryKey: ['todos'],
+    queryKey: ['kanbanTasks'],
     queryFn: async () => await taskApi.getKanbanTasks({token}),
   })
 
