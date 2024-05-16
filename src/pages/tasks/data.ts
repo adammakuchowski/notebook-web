@@ -22,7 +22,7 @@ export const initData: KanbanTasks = {
     },
     column3: {
       id: 'column3',
-      title: 'inProgess',
+      title: 'inProgress',
       taskIds: ['task5'],
     },
     column4: {
