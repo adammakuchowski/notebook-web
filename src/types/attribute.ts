@@ -7,8 +7,3 @@ export type Attribute = {
   ControlComponent: React.ComponentType<any>
   controlComponentProps?: Record<string, any>
 }
-
-export enum Theme {
-  Light = 'light',
-  Dark = 'dark',
-}
