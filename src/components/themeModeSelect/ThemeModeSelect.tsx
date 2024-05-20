@@ -5,7 +5,7 @@ import {Theme} from 'types'
 
 export const ThemeModeSelect = (): JSX.Element => {
   const {colorScheme, setColorScheme} = useMantineColorScheme()
-  const {t} = useTranslation()
+  const {t, i18n} = useTranslation()
 
   const themeSelectData = [
     {
@@ -18,8 +18,6 @@ export const ThemeModeSelect = (): JSX.Element => {
     },
   ]
 
-  // TODO: after changing language, render again
-
   const changeThemeMode = (
     changeThemeModeProps: ChangeThemeModeProps,
   ): void => {
@@ -30,8 +28,11 @@ export const ThemeModeSelect = (): JSX.Element => {
     setColorScheme(value as Theme)
   }
 
+  // TODO: fix responsiveness
+
   return (
     <Select
+      key={i18n.resolvedLanguage}
       data={themeSelectData}
       defaultValue={colorScheme}
       onChange={(value, option) => changeThemeMode({value, option})}

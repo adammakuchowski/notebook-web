@@ -16,7 +16,7 @@ export const SettingsPanel = ({
         return (
           <Box className={classes.controlTypeWrapper} key={attribute.fieldName}>
             <Text className={classes.labelWrapper}>
-              {attribute.translations[i18n.resolvedLanguage as 'pl' | 'en']}:{' '}
+              {attribute.translations[i18n.resolvedLanguage as 'pl' | 'en']}:
             </Text>
             <ControlComponent {...attribute.controlComponentProps} />
           </Box>
