@@ -5,10 +5,10 @@ import classes from './Kanban.module.css'
 import {Column} from './column'
 import {KanbanProps} from './types'
 
-export const Kanban = ({initData}: KanbanProps): JSX.Element => {
+export const Kanban = ({initData, updateKanban}: KanbanProps): JSX.Element => {
   const [data, setData] = useState(initData)
 
-  const onDragEnd = (result: DropResult): void => {
+  const onDragEnd = async (result: DropResult): Promise<void> => {
     const {destination, source, draggableId} = result
 
     if (!destination) {
@@ -43,6 +43,8 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
         },
       }
 
+      const token = localStorage.getItem('token')
+      await updateKanban({token, kanbanTasks: newState})
       setData(newState)
 
       return
@@ -73,6 +75,9 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
       },
     }
 
+    const token = localStorage.getItem('token')
+    await updateKanban({token, kanbanTasks: newState})
+
     setData(newState)
   }
 
@@ -82,9 +87,6 @@ export const Kanban = ({initData}: KanbanProps): JSX.Element => {
         {data.columnOrder.map((columnId) => {
           const column = data.columns[columnId]
           const tasks = column.taskIds.map((taskId) => data.tasks[taskId])
-
-          console.log('column', column)
-          console.log('tasks', tasks)
 
           return <Column key={column.id} column={column} tasks={tasks} />
         })}
