@@ -11,6 +11,12 @@
   padding: 8px;
   border-radius: 10px;
 
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   @mixin light {
     border-bottom: 2px solid #d4d4d4;
   }
