@@ -5,6 +5,5 @@ export interface GetKanbanTasksParams {
 }
 
 export interface UpdateKanbanTasksParams {
-  token: string
   kanbanTasks: KanbanTasks
 }
