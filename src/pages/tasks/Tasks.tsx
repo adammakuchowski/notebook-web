@@ -10,15 +10,9 @@ import {TasksPanel} from 'features'
 export const Tasks = (): JSX.Element => {
   const {t} = useTranslation()
 
-  const token = localStorage.getItem('token')
-
-  if (token === null) {
-    throw new Error('No token found')
-  }
-
   const {isPending, isError, data} = useQuery({
     queryKey: ['kanbanTasks'],
-    queryFn: async () => await taskApi.getKanbanTasks({token}),
+    queryFn: async () => await taskApi.getKanbanTasks(),
   })
 
   return (

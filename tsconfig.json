@@ -11,6 +11,7 @@
       "app/*": ["app/*"],
       "components/*": ["components/*"],
       "config/*": ["config/*"],
+      "contexts/*": ["contexts/*"],
       "features/*": ["features/*"],
       "pages/*": ["pages/*"],
       "hooks/*": ["hooks/*"],
