@@ -1,6 +1,5 @@
 import {Box} from '@mantine/core'
 import {useTranslation} from 'react-i18next'
-
 import {Subpage} from 'layouts'
 import classes from './Notes.module.css'
 

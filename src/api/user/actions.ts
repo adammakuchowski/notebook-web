@@ -1,8 +1,10 @@
 import type {AxiosPromise} from 'axios'
-
-import {axiosInstance} from '../base'
 import {AuthorizationToken, LoginData} from './types'
-import {LOGIN_USER_URL} from './constants'
+import {LOGIN_USER_URL, VERIFY_USER_URL} from './constants'
+import {axiosInstance} from '../base'
+
+export const verifyUser = async (): AxiosPromise =>
+  await axiosInstance.get(VERIFY_USER_URL)
 
 export const loginUser = async (
   loginData: LoginData,
