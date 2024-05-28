@@ -17,7 +17,8 @@
       "hooks/*": ["hooks/*"],
       "hocs/*": ["hocs/*"],
       "layouts/*": ["layouts/*"],
-      "types/*": ["types/*"]
+      "types/*": ["types/*"],
+      "middlewares/*": ["middlewares/*"]
     },
 
     /* Bundler mode */
