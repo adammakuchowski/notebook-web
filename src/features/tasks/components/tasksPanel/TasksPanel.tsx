@@ -1,13 +1,8 @@
-import {Box, Loader} from '@mantine/core'
-import {IconError404} from '@tabler/icons-react'
-import {Kanban} from 'components'
-import {withCenterPosition} from 'hocs'
+import {Box} from '@mantine/core'
+import {CenterPositionError, CenterPositionLoader, Kanban} from 'components'
 import {useUpdateKanbanTasks} from 'hooks'
 import classes from './TasksPanel.module.css'
 import {TasksPanelProps} from './types'
-
-const CenterPositionLoader = withCenterPosition(Loader)
-const CenterPositionError = withCenterPosition(IconError404)
 
 export const TasksPanel = ({
   kanbanTasksData,

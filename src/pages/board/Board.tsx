@@ -1,11 +1,9 @@
 import {Suspense} from 'react'
 import {Outlet} from 'react-router-dom'
-import {Container, Loader} from '@mantine/core'
+import {Container} from '@mantine/core'
 import {SidePanel} from 'features'
-import {withCenterPosition} from 'hocs/withCenterPosition'
+import {CenterPositionLoader} from 'components'
 import classes from './Board.module.css'
-
-const CenterPositionLoader = withCenterPosition(Loader)
 
 export const Board = (): JSX.Element => {
   return (

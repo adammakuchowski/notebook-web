@@ -1,9 +1,6 @@
-import {withCenterPosition} from 'hocs/withCenterPosition'
-import {Loader} from '@mantine/core'
 import {Navigate, Outlet} from 'react-router-dom'
 import {useVerify} from 'hooks'
-
-const CenterPositionLoader = withCenterPosition(Loader)
+import {CenterPositionLoader} from 'components'
 
 const redirectPath = '/login'
 
