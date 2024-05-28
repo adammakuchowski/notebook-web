@@ -1,7 +1,5 @@
 import cx from 'clsx'
-import {useNavigate} from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
-import {useMutation} from '@tanstack/react-query'
 import {useForm} from '@mantine/form'
 import {
   TextInput,
@@ -15,28 +13,13 @@ import {
 } from '@mantine/core'
 
 import classes from './LoginForm.module.css'
-import {userApi} from 'api'
+import {useLoginUser} from 'hooks/useLoginUser'
 
 export const LoginForm = (): JSX.Element => {
   const {t} = useTranslation()
-  const navigate = useNavigate()
   const {colorScheme} = useMantineColorScheme()
 
-  const {mutate, isPending} = useMutation({
-    mutationFn: userApi.loginUser,
-    onSuccess: (response) => {
-      const {
-        data: {token, refreshToken},
-      } = response
-
-      localStorage.setItem('token', token)
-      localStorage.setItem('refreshToken', refreshToken)
-      navigate('/')
-    },
-    onError: () => {
-      // TODO: init login error notification
-    },
-  })
+  const {mutate, isPending} = useLoginUser()
 
   const signIn = async (): Promise<void> => {
     const {values} = form

@@ -1,2 +1,2 @@
 export * from './actions'
-export type {AuthorizationToken} from './types'
+export type {AuthorizationToken, LoginData} from './types'

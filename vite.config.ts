@@ -18,6 +18,7 @@ export default defineConfig({
       hocs: path.resolve(__dirname, './src/hocs'),
       layouts: path.resolve(__dirname, './src/layouts'),
       types: path.resolve(__dirname, './src/types'),
+      middlewares: path.resolve(__dirname, './src/middlewares'),
     },
   },
 })
