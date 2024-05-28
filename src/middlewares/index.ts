@@ -1,1 +1,1 @@
-export {ProtectedRoutes} from './ProtectedRoutes'
+export {RouteGuardian} from './RouteGuardian'

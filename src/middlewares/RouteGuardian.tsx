@@ -7,7 +7,7 @@ const CenterPositionLoader = withCenterPosition(Loader)
 
 const redirectPath = '/login'
 
-export const ProtectedRoutes = (): JSX.Element => {
+export const RouteGuardian = (): JSX.Element => {
   const {isPending, data} = useVerify()
 
   if (isPending) {
