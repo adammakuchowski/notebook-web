@@ -15,7 +15,7 @@
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   @mixin light {
     border-bottom: 2px solid #d4d4d4;
@@ -24,6 +24,14 @@
   @mixin dark {
     border-bottom: 2px solid #3b3b3b;
   }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 5px;
 }
 
 .taskList {

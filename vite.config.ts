@@ -19,6 +19,7 @@ export default defineConfig({
       layouts: path.resolve(__dirname, './src/layouts'),
       types: path.resolve(__dirname, './src/types'),
       middlewares: path.resolve(__dirname, './src/middlewares'),
+      utils: path.resolve(__dirname, './src/utils'),
     },
   },
 })

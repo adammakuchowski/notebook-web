@@ -1,7 +1,5 @@
 import type {AxiosPromise} from 'axios'
-
 import {axiosInstance} from '../base'
-
 import {GET_KANBAN_TASKS, UPDATE_KANBAN_TASKS} from './constants'
 import {UpdateKanbanTasksParams} from './types'
 import {KanbanTasks} from 'types'
