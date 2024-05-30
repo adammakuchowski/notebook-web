@@ -1,0 +1,1 @@
+export {iconMapper} from './icon'
