@@ -9,7 +9,7 @@ export const Notes = (): JSX.Element => {
   return (
     <Box className={classes.pageContainer}>
       <Subpage title={t('notes.title')}>
-        <Box className={classes.settingsContainer}></Box>
+        <Box className={classes.notesContainer}></Box>
       </Subpage>
     </Box>
   )

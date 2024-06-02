@@ -6,4 +6,13 @@
   height: 100%;
   display: flex;
   align-items: center;
+  
+  border-radius: 20px;
+  @mixin light {
+    background-color: #ffffff;
+  }
+
+  @mixin dark {
+    background-color: #242424;
+  }
 }

@@ -1,6 +1,6 @@
 .sidePanelContainer {
   @mixin light {
-    background-color: white;
+    background-color: #ffffff;
   }
 
   @mixin dark {
