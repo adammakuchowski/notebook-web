@@ -1,6 +1,7 @@
 export type TaskType = {
   id: string
   title: string
+  priority: string
 }
 
 export type ColumnType = {
@@ -15,7 +16,8 @@ export type ColumnType = {
 }
 
 export type Columns = Record<string, ColumnType>
-export type Tasks = Record<string, ColumnType>
+
+export type Tasks = Record<string, TaskType>
 
 export type KanbanTasks = {
   tasks: Tasks

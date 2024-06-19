@@ -3,10 +3,31 @@ import {
   DraggableProvided,
   DraggableStateSnapshot,
 } from 'react-beautiful-dnd'
-import {ActionIcon, Box} from '@mantine/core'
+import {useTranslation} from 'react-i18next'
+import {ActionIcon, Box, Tooltip} from '@mantine/core'
 import {IconArrowsMaximize} from '@tabler/icons-react'
 import classes from './Task.module.css'
 import {TaskProps} from '../types'
+
+const priorityPalette: Record<string, string> = {
+  low: '#D7EAFA',
+  medium: '#FFFF9D',
+  high: '#FFC791',
+  highest: '#FF6E6E',
+}
+
+const PriorityDot = ({priority}: {priority: string}): JSX.Element => {
+  const {t} = useTranslation()
+
+  return (
+    <Tooltip label={`${t(`kanban.priority.title`)}: ${t(`kanban.priority.${priority}`)}`} withArrow>
+      <Box
+        className={classes.priority}
+        style={{backgroundColor: priorityPalette?.[priority]}}
+      />
+    </Tooltip>
+  )
+}
 
 const TaskDetailsButton = (): JSX.Element => {
   const openTaskDetails = (): void => {
@@ -25,7 +46,6 @@ export const Task = ({task, index}: TaskProps): JSX.Element => (
   <Draggable draggableId={task.id} index={index} key={task.id}>
     {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
       <Box
-        // TODO: find another way
         className={
           snapshot.isDragging
             ? classes.taskDraggingContainer
@@ -35,8 +55,14 @@ export const Task = ({task, index}: TaskProps): JSX.Element => (
         {...provided.dragHandleProps}
         ref={provided.innerRef}
       >
-        <TaskDetailsButton />
-        {task.title}
+        <Box className={classes.taskTitleContainer}>
+          <TaskDetailsButton />
+          {task.title}
+        </Box>
+
+        <Box style={{display: 'flex'}}>
+          <PriorityDot priority={task.priority} />
+        </Box>
       </Box>
     )}
   </Draggable>
