@@ -45,7 +45,7 @@
   transition: background-color 0.3s ease;
 
   @mixin light {
-    background-color: #e4f1fc;
+    background-color: #d3e8fa;
   }
 
   @mixin dark {

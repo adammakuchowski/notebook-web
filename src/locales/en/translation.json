@@ -34,6 +34,13 @@
         "inProgress": "In progess",
         "done": "Done"
       }
+    },
+    "priority": {
+      "title": "Priority",
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "highest": "Highest"
     }
   }
 }
