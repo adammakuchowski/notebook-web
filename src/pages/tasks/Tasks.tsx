@@ -4,7 +4,6 @@ import classes from './Tasks.module.css'
 import {Subpage} from 'layouts'
 import {TasksPanel} from 'features'
 import {useGetKanbanTasks} from 'hooks'
-// import {initData} from './data'
 
 export const Tasks = (): JSX.Element => {
   const {t} = useTranslation()
@@ -21,7 +20,7 @@ export const Tasks = (): JSX.Element => {
         // TODO
         actionButtonCallback={() => console.log(123)}
       >
-        <Box className={classes.settingsContainer}>
+        <Box className={classes.tasksContainer}>
           <TasksPanel
             kanbanTasksData={data?.data}
             isPending={isPending}
