@@ -43,8 +43,7 @@ export const Kanban = ({initData, updateKanban}: KanbanProps): JSX.Element => {
         },
       }
 
-      const token = localStorage.getItem('token')
-      await updateKanban({token, kanbanTasks: newState})
+      await updateKanban({kanbanTasks: newState})
       setData(newState)
 
       return
