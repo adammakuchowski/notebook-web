@@ -1,4 +1,7 @@
 {
+  "general": {
+    "create": "Stwórz"
+  },
   "login": {
     "title": "Logowanie",
     "signIn": "Zaloguj się",
@@ -17,7 +20,16 @@
   },
   "tasks": {
     "title": "Zadania",
-    "actionButton": "Dodaj zadanie"
+    "actionButton": "Dodaj zadanie",
+    "createTaskModal": {
+      "modalTitle": "Stwórz nowe zadanie",
+      "title": "Tytuł",
+      "titlePlaceholder": "Wprowadź tytuł zadania",
+      "description": "Opis",
+      "descriptionPlaceholder": "Wprowadź opis zadania",
+      "priority": "Priorytet",
+      "priorityPlaceholder": "Ustaw priorytet zadania"
+    }
   },
   "settings": {
     "title": "Ustawienia"
@@ -34,13 +46,13 @@
         "inProgress": "Realizowane",
         "done": "Zakończone"
       }
-    },
-    "priority": {
-      "title": "Priorytet",
-      "low": "Niski",
-      "medium": "Średni",
-      "high": "Wysoki",
-      "highest": "Najwyższy"
     }
+  },
+  "priority": {
+    "title": "Priorytet",
+    "low": "Niski",
+    "medium": "Średni",
+    "high": "Wysoki",
+    "highest": "Najwyższy"
   }
 }

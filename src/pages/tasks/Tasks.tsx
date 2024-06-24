@@ -1,12 +1,15 @@
 import {useTranslation} from 'react-i18next'
 import {Box} from '@mantine/core'
+import {useDisclosure} from '@mantine/hooks'
 import classes from './Tasks.module.css'
 import {Subpage} from 'layouts'
 import {TasksPanel} from 'features'
 import {useGetKanbanTasks} from 'hooks'
+import {CreateTaskModal} from 'features/tasks'
 
 export const Tasks = (): JSX.Element => {
   const {t} = useTranslation()
+  const [opened, {open, close}] = useDisclosure(false)
 
   const {isPending, isError, data} = useGetKanbanTasks()
 
@@ -17,8 +20,7 @@ export const Tasks = (): JSX.Element => {
         actionButton
         actionButtonDisabled={isError}
         actionButtonTitle={t('tasks.actionButton')}
-        // TODO
-        actionButtonCallback={() => console.log(123)}
+        actionButtonCallback={open}
       >
         <Box className={classes.tasksContainer}>
           <TasksPanel
@@ -28,6 +30,7 @@ export const Tasks = (): JSX.Element => {
           />
         </Box>
       </Subpage>
+      <CreateTaskModal opened={opened} close={close}/>
     </Box>
   )
 }

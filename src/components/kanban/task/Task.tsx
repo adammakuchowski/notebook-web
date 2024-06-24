@@ -20,7 +20,7 @@ const PriorityDot = ({priority}: {priority: string}): JSX.Element => {
   const {t} = useTranslation()
 
   return (
-    <Tooltip label={`${t(`kanban.priority.title`)}: ${t(`kanban.priority.${priority}`)}`} withArrow>
+    <Tooltip label={`${t(`priority.title`)}: ${t(`priority.${priority}`)}`} withArrow>
       <Box
         className={classes.priority}
         style={{backgroundColor: priorityPalette?.[priority]}}
