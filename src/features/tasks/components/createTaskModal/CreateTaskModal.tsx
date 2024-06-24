@@ -1,5 +1,6 @@
 import {useTranslation} from 'react-i18next'
 import {useForm} from '@mantine/form'
+import {DateTimePicker} from '@mantine/dates'
 import {Box, Button, Modal, Select, TextInput, Textarea} from '@mantine/core'
 import classes from './CreateTaskModal.module.css'
 import {CreateTaskModalProps} from './types'
@@ -15,12 +16,14 @@ export const CreateTaskModal = ({
       title: '',
       description: '',
       priority: '',
+      eventDate: null,
     },
 
     validate: {
       title: (value) => !value,
       description: (value) => !value,
       priority: (value) => !value,
+      eventDate: (value) => !value,
     },
   })
 
@@ -32,7 +35,7 @@ export const CreateTaskModal = ({
   ]
 
   const handleClose = (): void => {
-    form.reset() 
+    form.reset()
     close()
   }
 
@@ -64,9 +67,16 @@ export const CreateTaskModal = ({
         <Select
           withAsterisk
           label={t('tasks.createTaskModal.priority')}
-          description={t('tasks.createTaskModal.priorityPlaceholder')}
+          description={t('tasks.createTaskModal.priorityDescription')}
           {...form.getInputProps('priority')}
           data={prioritySelectOptions}
+          mt='md'
+        />
+        <DateTimePicker
+          withAsterisk
+          label={t('tasks.createTaskModal.eventDate')}
+          placeholder={t('tasks.createTaskModal.eventDatePlaceholder')}
+          {...form.getInputProps('eventDate')}
           mt='md'
         />
         <Box className={classes.createButtonContainer}>
