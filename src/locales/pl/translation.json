@@ -28,7 +28,9 @@
       "description": "Opis",
       "descriptionPlaceholder": "Wprowadź opis zadania",
       "priority": "Priorytet",
-      "priorityPlaceholder": "Ustaw priorytet zadania"
+      "priorityDescription": "Ustaw priorytet zadania",
+      "eventDate": "Data i czas",
+      "eventDatePlaceholder": "Wprowadź datę i czas"
     }
   },
   "settings": {
