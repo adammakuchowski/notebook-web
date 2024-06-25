@@ -3,7 +3,7 @@ import {IconError404} from '@tabler/icons-react'
 import {withCenterPosition} from 'hocs'
 import {useUpdateKanbanTasks} from 'hooks'
 import classes from './TasksPanel.module.css'
-import {KanbanTasks} from '../kanban'
+import {KanbanTasks} from '../kanbanTasks'
 import {TasksPanelProps} from './types'
 
 const CenterPositionLoader = withCenterPosition(Loader)
