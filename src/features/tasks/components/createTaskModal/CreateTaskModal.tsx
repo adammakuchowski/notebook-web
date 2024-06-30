@@ -4,18 +4,20 @@ import {DateTimePicker} from '@mantine/dates'
 import {Box, Button, Modal, Select, TextInput, Textarea} from '@mantine/core'
 import classes from './CreateTaskModal.module.css'
 import {CreateTaskModalProps} from './types'
+import {useCreateTask} from 'hooks'
 
 export const CreateTaskModal = ({
   close,
   opened,
 }: CreateTaskModalProps): JSX.Element => {
   const {t} = useTranslation()
+  const {mutate} = useCreateTask()
 
   const form = useForm({
     initialValues: {
       title: '',
       description: '',
-      priority: '',
+      priority: null,
       eventDate: null,
     },
 
@@ -46,7 +48,7 @@ export const CreateTaskModal = ({
       title={t('tasks.createTaskModal.modalTitle')}
       size={'lg'}
     >
-      <form onSubmit={form.onSubmit((values) => console.log(values))}>
+      <form onSubmit={form.onSubmit((values) => mutate({task: values}))}>
         <TextInput
           data-autofocus
           withAsterisk
