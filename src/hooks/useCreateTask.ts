@@ -14,7 +14,7 @@ export const useCreateTask = (): UseMutationResult<
   return useMutation({
     mutationFn: taskApi.createTask,
     onSuccess: (response) => {
-      if (!response || response.status !== 200) {
+      if (!response || response.status !== 201) {
         throw new Error('Error while create tasks')
       }
 
