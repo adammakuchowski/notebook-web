@@ -1,12 +1,19 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import {DragDropContext, DropResult} from 'react-beautiful-dnd'
 import {Box} from '@mantine/core'
 import classes from './KanbanTasks.module.css'
 import {Column} from './column'
 import {KanbanProps} from './types'
 
-export const KanbanTasks = ({initData, updateKanban}: KanbanProps): JSX.Element => {
+export const KanbanTasks = ({
+  initData,
+  updateKanban,
+}: KanbanProps): JSX.Element => {
   const [data, setData] = useState(initData)
+
+  useEffect(() => {
+    setData(initData)
+  }, [initData])
 
   const onDragEnd = async (result: DropResult): Promise<void> => {
     const {destination, source, draggableId} = result
