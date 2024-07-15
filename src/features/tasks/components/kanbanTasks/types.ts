@@ -8,6 +8,7 @@ export type KanbanProps = {
 export type ColumnProps = {
   column: ColumnType
   tasks: TaskType[]
+  index: number
 }
 
 export type TaskProps = {

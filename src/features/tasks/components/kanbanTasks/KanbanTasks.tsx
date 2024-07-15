@@ -1,9 +1,14 @@
 import {useEffect, useState} from 'react'
-import {DragDropContext, DropResult} from 'react-beautiful-dnd'
+import {
+  DragDropContext,
+  DropResult,
+  DroppableProvided,
+} from 'react-beautiful-dnd'
 import {Box} from '@mantine/core'
 import classes from './KanbanTasks.module.css'
 import {Column} from './column'
 import {KanbanProps} from './types'
+import {StrictModeDroppable} from './strictModeDroppable'
 
 export const KanbanTasks = ({
   initData,
@@ -16,7 +21,7 @@ export const KanbanTasks = ({
   }, [initData])
 
   const onDragEnd = async (result: DropResult): Promise<void> => {
-    const {destination, source, draggableId} = result
+    const {destination, source, draggableId, type} = result
 
     if (!destination) {
       return
@@ -26,6 +31,22 @@ export const KanbanTasks = ({
       destination.index === source.index &&
       destination.droppableId === source.droppableId
     ) {
+      return
+    }
+
+    if (type === 'column') {
+      const newColumnOrder = [...data.columnOrder]
+      newColumnOrder.splice(source.index, 1)
+      newColumnOrder.splice(destination.index, 0, draggableId)
+
+      const newState = {
+        ...data,
+        columnOrder: newColumnOrder,
+      }
+
+      setData(newState)
+      await updateKanban({kanbanTasks: newState})
+
       return
     }
 
@@ -50,8 +71,8 @@ export const KanbanTasks = ({
         },
       }
 
-      await updateKanban({kanbanTasks: newState})
       setData(newState)
+      await updateKanban({kanbanTasks: newState})
 
       return
     }
@@ -81,22 +102,40 @@ export const KanbanTasks = ({
       },
     }
 
-    const token = localStorage.getItem('token')
-    await updateKanban({token, kanbanTasks: newState})
-
     setData(newState)
+    await updateKanban({kanbanTasks: newState})
   }
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Box className={classes.pageContainer}>
-        {data.columnOrder.map((columnId) => {
-          const column = data.columns[columnId]
-          const tasks = column.taskIds.map((taskId) => data.tasks[taskId])
+      <StrictModeDroppable
+        droppableId="all-columns"
+        direction="horizontal"
+        type="column"
+      >
+        {(provided: DroppableProvided) => (
+          <Box
+            className={classes.pageContainer}
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
+            {data.columnOrder.map((columnId, index) => {
+              const column = data.columns[columnId]
+              const tasks = column.taskIds.map((taskId) => data.tasks[taskId])
 
-          return <Column key={column.id} column={column} tasks={tasks} />
-        })}
-      </Box>
+              return (
+                <Column
+                  key={column.id}
+                  column={column}
+                  tasks={tasks}
+                  index={index}
+                />
+              )
+            })}
+            {provided.placeholder}
+          </Box>
+        )}
+      </StrictModeDroppable>
     </DragDropContext>
   )
 }

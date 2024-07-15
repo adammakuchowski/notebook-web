@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   
-  border-radius: 20px;
+  border-radius: 5px;
   @mixin light {
     background-color: #ffffff;
   }
