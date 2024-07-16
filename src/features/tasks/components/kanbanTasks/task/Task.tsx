@@ -4,8 +4,8 @@ import {
   DraggableStateSnapshot,
 } from 'react-beautiful-dnd'
 import {useTranslation} from 'react-i18next'
-import {ActionIcon, Box, Tooltip} from '@mantine/core'
-import {IconArrowsMaximize} from '@tabler/icons-react'
+import {Box, Tooltip} from '@mantine/core'
+import {IconGridDots} from '@tabler/icons-react'
 import classes from './Task.module.css'
 import {TaskProps} from '../types'
 
@@ -29,19 +29,6 @@ const PriorityDot = ({priority}: {priority: string}): JSX.Element => {
   )
 }
 
-const TaskDetailsButton = (): JSX.Element => {
-  const openTaskDetails = (): void => {
-    // TODO
-    console.log(123)
-  }
-
-  return (
-    <ActionIcon variant="light" aria-label="Settings" onClick={openTaskDetails}>
-      <IconArrowsMaximize style={{width: '70%', height: '70%'}} stroke={1.5} />
-    </ActionIcon>
-  )
-}
-
 export const Task = ({task, index}: TaskProps): JSX.Element => (
   <Draggable draggableId={task.id} index={index} key={task.id}>
     {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
@@ -56,12 +43,12 @@ export const Task = ({task, index}: TaskProps): JSX.Element => (
         ref={provided.innerRef}
       >
         <Box className={classes.taskTitleContainer}>
-          <TaskDetailsButton />
+          <PriorityDot priority={task.priority} />
           {task.title}
         </Box>
 
         <Box style={{display: 'flex'}}>
-          <PriorityDot priority={task.priority} />
+          <IconGridDots stroke={2}/>
         </Box>
       </Box>
     )}

@@ -1,6 +1,8 @@
 .taskContainer {
-  border-radius: 10px;
+  border-radius: 5px;
+  min-height: 50px;
   padding: 8px;
+  margin: 0px 10px;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -8,12 +10,6 @@
   gap: 20px;
   font-size: 16px;
   font-weight: bold;
-
-  min-height: 75px;
-
-  -webkit-box-shadow: 13px 11px 25px -19px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 13px 11px 25px -19px rgba(66, 68, 90, 1);
-  box-shadow: 13px 11px 25px -19px rgba(66, 68, 90, 1);
 
   @mixin light {
     background-color: #ffffff;
@@ -25,7 +21,7 @@
 }
 
 .taskDraggingContainer {
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 8px;
   margin-bottom: 8px;
   display: flex;
