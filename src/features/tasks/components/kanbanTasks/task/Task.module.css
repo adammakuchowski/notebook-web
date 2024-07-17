@@ -22,8 +22,10 @@
 
 .taskDraggingContainer {
   border-radius: 5px;
+  min-height: 50px;
   padding: 8px;
-  margin-bottom: 8px;
+  margin: 0px 10px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
