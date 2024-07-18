@@ -59,3 +59,24 @@
     background-color: #24394b;
   }
 }
+
+.addTaskButton {
+  border-radius: 5px;
+  padding: 8px;
+  margin: 0px 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: bold;
+
+  @mixin light {
+
+  }
+
+  @mixin dark {
+
+  }
+}

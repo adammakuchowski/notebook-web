@@ -20,7 +20,8 @@
   },
   "tasks": {
     "title": "Zadania",
-    "actionButton": "Dodaj zadanie",
+    "actionButton": "Dodaj kolumnę",
+    "createTask": "Dodaj zadanie",
     "createTaskModal": {
       "modalTitle": "Stwórz nowe zadanie",
       "title": "Tytuł",
