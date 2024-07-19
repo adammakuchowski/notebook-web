@@ -20,7 +20,8 @@
   },
   "tasks": {
     "title": "Tasks",
-    "actionButton": "Add task",
+    "actionButton": "Add column",
+    "createTask": "Add task",
     "createTaskModal": {
       "modalTitle": "Create new task",
       "title": "Title",

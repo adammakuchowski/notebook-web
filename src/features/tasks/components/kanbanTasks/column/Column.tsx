@@ -58,6 +58,7 @@ export const Column = ({column, tasks, index}: ColumnProps): JSX.Element => {
               </Box>
             )}
           </StrictModeDroppable>
+          <Box className={classes.addTaskButton}>{t('tasks.createTask')}</Box>
         </Box>
       )}
     </Draggable>
