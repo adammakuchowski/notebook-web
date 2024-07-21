@@ -1,18 +1,21 @@
 import {
   DroppableProvided,
-  DroppableStateSnapshot,
   DraggableProvided,
   Draggable,
 } from 'react-beautiful-dnd'
 import {useTranslation} from 'react-i18next'
-import {Box, Title} from '@mantine/core'
+import {Box, UnstyledButton, Title} from '@mantine/core'
 import classes from './Column.module.css'
 import {Task} from '../task'
 import {ColumnProps} from '../types'
 import {StrictModeDroppable} from '../strictModeDroppable'
 import {iconMapper} from 'utils'
 
-export const Column = ({column, tasks, index}: ColumnProps): JSX.Element => {
+export const Column = ({
+  column,
+  tasks,
+  index
+}: ColumnProps): JSX.Element => {
   const {t} = useTranslation()
 
   const {
@@ -38,18 +41,11 @@ export const Column = ({column, tasks, index}: ColumnProps): JSX.Element => {
             <IconRight stroke={2} />
           </Title>
           <StrictModeDroppable droppableId={column.id} type="task">
-            {(
-              provided: DroppableProvided,
-              snapshot: DroppableStateSnapshot,
-            ) => (
+            {(provided: DroppableProvided) => (
               <Box
                 ref={provided.innerRef}
                 {...provided.droppableProps}
-                className={
-                  snapshot.isDraggingOver
-                    ? classes.activeTaskList
-                    : classes.taskList
-                }
+                className={classes.taskList}
               >
                 {tasks.map((task, index) => (
                   <Task key={task.id} task={task} index={index} />
@@ -58,7 +54,9 @@ export const Column = ({column, tasks, index}: ColumnProps): JSX.Element => {
               </Box>
             )}
           </StrictModeDroppable>
-          <Box className={classes.addTaskButton}>{t('tasks.createTask')}</Box>
+          <UnstyledButton className={classes.addTaskButton}>
+            {t('tasks.createTask')}
+          </UnstyledButton>
         </Box>
       )}
     </Draggable>

@@ -26,7 +26,10 @@ export const TasksPanel = ({
 
   return (
     <Box className={classes.tasksPanelContainer}>
-      <KanbanTasks initData={kanbanTasksData} updateKanban={mutate} />
+      <KanbanTasks
+        initData={kanbanTasksData}
+        updateKanban={mutate}
+      />
     </Box>
   )
 }

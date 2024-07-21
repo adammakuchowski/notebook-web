@@ -9,7 +9,7 @@ import {CreateTaskModal} from 'features/tasks'
 
 export const Tasks = (): JSX.Element => {
   const {t} = useTranslation()
-  const [opened, {open, close}] = useDisclosure(false)
+  const [createTaskModalOpened, {open: openCreateTaskModal, close: closeCreateTaskModal}] = useDisclosure(false)
 
   const {isPending, isError, data} = useGetKanbanTasks()
 
@@ -20,7 +20,7 @@ export const Tasks = (): JSX.Element => {
         actionButton
         actionButtonDisabled={isError}
         actionButtonTitle={t('tasks.actionButton')}
-        actionButtonCallback={open}
+        actionButtonCallback={() => {}}
       >
         <Box className={classes.tasksContainer}>
           <TasksPanel
@@ -30,7 +30,7 @@ export const Tasks = (): JSX.Element => {
           />
         </Box>
       </Subpage>
-      <CreateTaskModal opened={opened} close={close}/>
+      <CreateTaskModal opened={createTaskModalOpened} close={closeCreateTaskModal}/>
     </Box>
   )
 }
