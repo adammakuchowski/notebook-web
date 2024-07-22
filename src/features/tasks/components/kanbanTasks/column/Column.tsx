@@ -5,11 +5,12 @@ import {
 } from 'react-beautiful-dnd'
 import {useTranslation} from 'react-i18next'
 import {Box, UnstyledButton, Title} from '@mantine/core'
+import {iconMapper} from 'utils'
+import {useCreateTaskContext} from 'contexts'
 import classes from './Column.module.css'
 import {Task} from '../task'
 import {ColumnProps} from '../types'
 import {StrictModeDroppable} from '../strictModeDroppable'
-import {iconMapper} from 'utils'
 
 export const Column = ({
   column,
@@ -17,12 +18,18 @@ export const Column = ({
   index
 }: ColumnProps): JSX.Element => {
   const {t} = useTranslation()
+  const {openCreateTaskModal, setColumnId} = useCreateTaskContext()
 
   const {
     icons: {iconRight},
   } = column
 
   const IconRight = iconMapper[iconRight]
+
+  const onOpenCreateTaskModal = (): void => {
+    setColumnId(column.id)
+    openCreateTaskModal()
+  }
 
   return (
     <Draggable draggableId={column.id} index={index}>
@@ -54,7 +61,7 @@ export const Column = ({
               </Box>
             )}
           </StrictModeDroppable>
-          <UnstyledButton className={classes.addTaskButton}>
+          <UnstyledButton className={classes.addTaskButton} onClick={onOpenCreateTaskModal}>
             {t('tasks.createTask')}
           </UnstyledButton>
         </Box>
