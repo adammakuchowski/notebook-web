@@ -1,21 +1,10 @@
+import {FC, createContext, useState, useContext} from 'react'
 import {useDisclosure} from '@mantine/hooks'
-import {FC, ReactNode, createContext, useState, useContext} from 'react'
-
-interface CreateTaskContextType {
-  columnId: string
-  setColumnId: (newColumnId: string) => void
-  createTaskModalOpened: boolean
-  openCreateTaskModal: () => void
-  closeCreateTaskModal: () => void
-}
+import {CreateTaskContextType, CreateTaskProviderProps} from './types'
 
 const CreateTaskContext = createContext<CreateTaskContextType | undefined>(
   undefined,
 )
-
-interface CreateTaskProviderProps {
-  children: ReactNode
-}
 
 export const CreateTaskProvider: FC<CreateTaskProviderProps> = ({children}) => {
   const [columnId, setColumnId] = useState<string>('')
