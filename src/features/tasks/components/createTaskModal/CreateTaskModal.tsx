@@ -9,7 +9,7 @@ import classes from './CreateTaskModal.module.css'
 export const CreateTaskModal = (): JSX.Element => {
   const {t} = useTranslation()
   const {mutate} = useCreateTask()
-  const {closeCreateTaskModal, createTaskModalOpened} = useCreateTaskContext()
+  const {closeCreateTaskModal, createTaskModalOpened, columnId} = useCreateTaskContext()
 
   const form = useForm({
     initialValues: {
@@ -23,7 +23,6 @@ export const CreateTaskModal = (): JSX.Element => {
       title: (value) => !value,
       description: (value) => !value,
       priority: (value) => !value,
-      eventDate: (value) => !value,
     },
   })
 
@@ -46,7 +45,7 @@ export const CreateTaskModal = (): JSX.Element => {
       title={t('tasks.createTaskModal.modalTitle')}
       size={'lg'}
     >
-      <form onSubmit={form.onSubmit((values) => mutate({task: values}))}>
+      <form onSubmit={form.onSubmit((values) => mutate({task: values, columnId}))}>
         <TextInput
           data-autofocus
           withAsterisk
@@ -73,7 +72,6 @@ export const CreateTaskModal = (): JSX.Element => {
           mt='md'
         />
         <DateTimePicker
-          withAsterisk
           label={t('tasks.createTaskModal.eventDate')}
           placeholder={t('tasks.createTaskModal.eventDatePlaceholder')}
           {...form.getInputProps('eventDate')}

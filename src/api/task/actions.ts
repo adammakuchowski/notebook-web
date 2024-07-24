@@ -14,5 +14,6 @@ export const updateKanbanTasks = async ({
 
 export const createTask = async ({
   task,
+  columnId
 }: CreateTaskParams): AxiosPromise<Task> =>
-  await axiosInstance.post(CREATE_TASK, task)
+  await axiosInstance.post(CREATE_TASK, {task, columnId})
