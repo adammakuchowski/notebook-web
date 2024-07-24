@@ -40,7 +40,7 @@ export const SidePanel = (): JSX.Element => {
       key={item.label}
       active={index === active}
       label={item.label}
-      leftSection={<item.icon size="1.7rem" stroke={1.5} />}
+      leftSection={<item.icon size='1.7rem' stroke={1.5} />}
       onClick={() => {
         navigate(item.path)
         setActive(index)

@@ -15,7 +15,7 @@ export const Subpage = ({
       <Title order={2}>{title}</Title>
       {actionButton ? (
         <Button
-          variant="filled"
+          variant='filled'
           onClick={actionButtonCallback}
           disabled={actionButtonDisabled}
         >

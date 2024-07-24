@@ -43,11 +43,17 @@
   },
   "kanban": {
     "column": {
-      "title": {
-        "toDo": "To do",
-        "blocked": "Blocked",
-        "inProgress": "In progess",
-        "done": "Done"
+      "columnHeader": {
+        "title": {
+          "toDo": "To do",
+          "blocked": "Blocked",
+          "inProgress": "In progess",
+          "done": "Done"
+        },
+        "menu": {
+          "title": "Settings",
+          "deleteColumn": "Delete column"
+        }
       }
     }
   },

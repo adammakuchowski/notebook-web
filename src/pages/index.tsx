@@ -12,14 +12,14 @@ export const Routing = (): JSX.Element => {
   return (
     <Routes>
       <Route element={<ProtectedRoutes />}>
-        <Route path="/board" element={<BoardPage />}>
-          <Route path="/board/tasks" element={<TasksPage />} />
-          <Route path="/board/notes" element={<NotesPage />} />
-          <Route path="/board/settings" element={<SettingsPage />} />
+        <Route path='/board' element={<BoardPage />}>
+          <Route path='/board/tasks' element={<TasksPage />} />
+          <Route path='/board/notes' element={<NotesPage />} />
+          <Route path='/board/settings' element={<SettingsPage />} />
         </Route>
       </Route>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="*" element={<Navigate to="/board/tasks" replace />} />
+      <Route path='/login' element={<LoginPage />} />
+      <Route path='*' element={<Navigate to='/board/tasks' replace />} />
     </Routes>
   )
 }

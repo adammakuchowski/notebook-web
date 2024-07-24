@@ -43,11 +43,17 @@
   },
   "kanban": {
     "column": {
-      "title": {
-        "toDo": "Do zrobienia",
-        "blocked": "Zablokowane",
-        "inProgress": "Realizowane",
-        "done": "Zakończone"
+      "columnHeader": {
+        "title": {
+          "toDo": "Do zrobienia",
+          "blocked": "Zablokowane",
+          "inProgress": "Realizowane",
+          "done": "Zakończone"
+        },
+        "menu": {
+          "title": "Ustawienia",
+          "deleteColumn": "Usuń kolumnę"
+        }
       }
     }
   },
