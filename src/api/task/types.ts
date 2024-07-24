@@ -10,4 +10,5 @@ export interface UpdateKanbanTasksParams {
 
 export interface CreateTaskParams {
   task: Task
+  columnId: string
 }

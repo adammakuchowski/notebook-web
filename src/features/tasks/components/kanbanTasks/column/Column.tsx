@@ -12,11 +12,7 @@ import {Task} from '../task'
 import {ColumnProps} from '../types'
 import {StrictModeDroppable} from '../strictModeDroppable'
 
-export const Column = ({
-  column,
-  tasks,
-  index
-}: ColumnProps): JSX.Element => {
+export const Column = ({column, tasks, index}: ColumnProps): JSX.Element => {
   const {t} = useTranslation()
   const {openCreateTaskModal, setColumnId} = useCreateTaskContext()
 
@@ -39,14 +35,16 @@ export const Column = ({
           ref={provided.innerRef}
           {...provided.draggableProps}
         >
-          <Title
-            order={4}
-            className={classes.title}
-            {...provided.dragHandleProps}
-          >
-            {t(`kanban.column.title.${column.title}`)}
+          <Box className={classes.columnHeader}>
+            <Title
+              order={4}
+              className={classes.title}
+              {...provided.dragHandleProps}
+            >
+              {t(`kanban.column.title.${column.title}`)}
+            </Title>
             <IconRight stroke={2} />
-          </Title>
+          </Box>
           <StrictModeDroppable droppableId={column.id} type="task">
             {(provided: DroppableProvided) => (
               <Box
@@ -61,7 +59,10 @@ export const Column = ({
               </Box>
             )}
           </StrictModeDroppable>
-          <UnstyledButton className={classes.addTaskButton} onClick={onOpenCreateTaskModal}>
+          <UnstyledButton
+            className={classes.addTaskButton}
+            onClick={onOpenCreateTaskModal}
+          >
             {t('tasks.createTask')}
           </UnstyledButton>
         </Box>
