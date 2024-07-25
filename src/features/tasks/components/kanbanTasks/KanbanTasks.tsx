@@ -109,9 +109,9 @@ export const KanbanTasks = ({
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <StrictModeDroppable
-        droppableId="all-columns"
-        direction="horizontal"
-        type="column"
+        droppableId='all-columns'
+        direction='horizontal'
+        type='column'
       >
         {(provided: DroppableProvided) => (
           <Box

@@ -23,7 +23,7 @@ export const LanguageSelect = ({
       defaultValue={i18n.resolvedLanguage}
       onChange={(value, option) => changeLanguage({value, option})}
       allowDeselect={false}
-      size="sm"
+      size='sm'
       w={width}
     />
   )

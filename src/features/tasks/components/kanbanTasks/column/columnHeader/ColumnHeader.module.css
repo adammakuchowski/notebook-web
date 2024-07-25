@@ -1,0 +1,25 @@
+.columnHeader {
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titleButton {
+  @mixin light {
+    color: #2E2E2E;
+  }
+
+  @mixin dark {
+    color: #EDEDED;
+  }
+}

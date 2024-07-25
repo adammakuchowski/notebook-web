@@ -21,9 +21,9 @@ export const ThemeModeButton = (): JSX.Element => {
           computedColorScheme === Theme.Light ? Theme.Dark : Theme.Light,
         )
       }
-      variant="default"
-      size="lg"
-      aria-label="Toggle color scheme"
+      variant='default'
+      size='lg'
+      aria-label='Toggle color scheme'
     >
       <IconSun className={cx(classes.icon, classes.light)} stroke={1.5} />
       <IconMoon className={cx(classes.icon, classes.dark)} stroke={1.5} />

@@ -38,7 +38,7 @@ export const LoginForm = (): JSX.Element => {
 
   return (
     <Container className={cx(classes.container, classes[colorScheme])}>
-      <Box maw={340} mx="auto" mt={50}>
+      <Box maw={340} mx='auto' mt={50}>
         <Title order={2} className={classes.titleWrapper}>
           {t('login.title')}
         </Title>
@@ -49,17 +49,17 @@ export const LoginForm = (): JSX.Element => {
             {...form.getInputProps('email')}
           />
           <PasswordInput
-            mt="sm"
+            mt='sm'
             label={t('login.password')}
             placeholder={t('login.password')}
             {...form.getInputProps('password')}
           />
-          <Group justify="flex-end">
-            <Button size="compact-xs" variant="default" justify="right" mt="10">
+          <Group justify='flex-end'>
+            <Button size='compact-xs' variant='default' justify='right' mt='10'>
               {t('login.forgotPassword')}
             </Button>
           </Group>
-          <Button type="submit" mt="xl" fullWidth loading={isPending}>
+          <Button type='submit' mt='xl' fullWidth loading={isPending}>
             {t('login.signIn')}
           </Button>
         </form>

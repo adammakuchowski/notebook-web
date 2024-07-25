@@ -9,16 +9,16 @@ export const IconButton = ({
 }: IconButtonProps): JSX.Element => {
   return (
     <Button
-      justify="space-between"
+      justify='space-between'
       className={classes.iconWrapper}
       leftSection={
         <span className={classes.leftSection}>
-          <Icon size="1.7rem" stroke={1.5} />
+          <Icon size='1.7rem' stroke={1.5} />
           <p>{label}</p>
         </span>
       }
       rightSection={<span />}
-      variant="filled"
+      variant='filled'
       onClick={action}
     >
       <span />

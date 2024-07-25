@@ -37,7 +37,7 @@ export const ThemeModeSelect = (): JSX.Element => {
       defaultValue={colorScheme}
       onChange={(value, option) => changeThemeMode({value, option})}
       allowDeselect={false}
-      size="sm"
+      size='sm'
       w={100}
     />
   )
