@@ -8,8 +8,9 @@ import classes from './CreateTaskModal.module.css'
 
 export const CreateTaskModal = (): JSX.Element => {
   const {t} = useTranslation()
-  const {mutate} = useCreateTask()
-  const {closeCreateTaskModal, createTaskModalOpened, columnId} = useCreateTaskContext()
+  const {mutate, isPending} = useCreateTask()
+  const {closeCreateTaskModal, createTaskModalOpened, columnId} =
+    useCreateTaskContext()
 
   const form = useForm({
     initialValues: {
@@ -45,7 +46,11 @@ export const CreateTaskModal = (): JSX.Element => {
       title={t('tasks.createTaskModal.modalTitle')}
       size={'lg'}
     >
-      <form onSubmit={form.onSubmit((values) => mutate({task: values, columnId}))}>
+      <form
+        onSubmit={form.onSubmit((values) =>
+          mutate({task: values, columnId}, {onSuccess: handleClose}),
+        )}
+      >
         <TextInput
           data-autofocus
           withAsterisk
@@ -83,6 +88,7 @@ export const CreateTaskModal = (): JSX.Element => {
             type='submit'
             disabled={!form.isValid()}
             mt='lg'
+            loading={isPending}
           >
             {t('general.create')}
           </Button>
