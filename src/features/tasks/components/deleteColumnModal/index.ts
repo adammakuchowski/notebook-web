@@ -1,0 +1,1 @@
+export {DeleteColumnModal} from './DeleteColumnModal'

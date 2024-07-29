@@ -3,4 +3,8 @@ export * as userApi from './user'
 export * as taskApi from './task'
 
 export type {AuthorizationToken, LoginData} from './user'
-export type {UpdateKanbanTasksParams} from './task'
+
+export type {
+  UpdateKanbanTasksParams,
+  DeleteColumnParams,
+} from './task'

@@ -1,6 +1,7 @@
 import {t} from 'i18next'
 import {Box, Title, Menu, ActionIcon} from '@mantine/core'
 import {IconDots, IconTrash} from '@tabler/icons-react'
+import {useDeleteColumnContext} from 'contexts'
 import classes from './ColumnHeader.module.css'
 import {ColumnHeaderProps} from './types'
 
@@ -8,6 +9,8 @@ export const ColumnHeader = ({
   provided,
   column,
 }: ColumnHeaderProps): JSX.Element => {
+  const {openDeleteColumnModal} = useDeleteColumnContext()
+  
   return (
     <Box className={classes.columnHeader}>
       <Title order={4} className={classes.title} {...provided.dragHandleProps}>
@@ -27,6 +30,7 @@ export const ColumnHeader = ({
           <Menu.Item
             color='red'
             leftSection={<IconTrash style={{width: 14, height: 14}} />}
+            onClick={openDeleteColumnModal}
           >
             {t(`kanban.column.columnHeader.menu.deleteColumn`)}
           </Menu.Item>
