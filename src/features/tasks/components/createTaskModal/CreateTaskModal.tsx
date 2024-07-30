@@ -1,7 +1,7 @@
 import {useTranslation} from 'react-i18next'
 import {useForm} from '@mantine/form'
 import {DateTimePicker} from '@mantine/dates'
-import {Box, Button, Modal, Select, TextInput, Textarea} from '@mantine/core'
+import {Box, Button, Modal, Select, TextInput, Textarea, Title} from '@mantine/core'
 import {useCreateTaskContext} from 'contexts'
 import {useCreateTask} from 'hooks'
 import classes from './CreateTaskModal.module.css'
@@ -43,7 +43,7 @@ export const CreateTaskModal = (): JSX.Element => {
     <Modal
       opened={createTaskModalOpened}
       onClose={handleClose}
-      title={t('tasks.createTaskModal.modalTitle')}
+      title= {<Title order={5}>{t('tasks.createTaskModal.modalTitle')}</Title>}
       size={'lg'}
     >
       <form

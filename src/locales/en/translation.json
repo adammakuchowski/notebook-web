@@ -1,6 +1,8 @@
 {
   "general": {
-    "create": "Create"
+    "create": "Create",
+    "delete": "Delete",
+    "cancel": "Cancel"
   },
   "login": {
     "title": "Login",
@@ -32,6 +34,11 @@
       "priorityDescription": "Set task priority",
       "eventDate": "Date and time",
       "eventDatePlaceholder": "Enter date and time"
+    },
+    "deleteColumnModal": {
+      "modalTitle": "Delete column",
+      "info": "Are you sure you want to delete the column:",
+      "extraInfo": "All tasks in this column will also be deleted."
     }
   },
   "settings": {
