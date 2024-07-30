@@ -1,5 +1,3 @@
-import {ReactNode} from 'react'
-
 export interface DeleteColumnContextType {
   deleteColumnModalOpened: boolean
   openDeleteColumnModal: () => void
@@ -7,5 +5,5 @@ export interface DeleteColumnContextType {
 }
 
 export interface DeleteColumnProviderProps {
-  children: ReactNode
+  children: JSX.Element
 }

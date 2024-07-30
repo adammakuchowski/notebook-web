@@ -1,12 +1,12 @@
-import {FC, createContext, useContext} from 'react'
+import {createContext, useContext} from 'react'
 import {useDisclosure} from '@mantine/hooks'
-import {DeleteColumnContextType, DeleteColumnProviderProps} from './types'
+import {DeleteColumnContextType} from './types'
 
 const DeleteColumnContext = createContext<DeleteColumnContextType | undefined>(
   undefined,
 )
 
-export const DeleteColumnProvider: FC<DeleteColumnProviderProps> = ({children}) => {
+export const DeleteColumnProvider = (Component: () => JSX.Element) => () => {
   const [
     deleteColumnModalOpened,
     {open: openDeleteColumnModal, close: closeDeleteColumnModal},
@@ -20,7 +20,7 @@ export const DeleteColumnProvider: FC<DeleteColumnProviderProps> = ({children}) 
         closeDeleteColumnModal
       }}
     >
-      {children}
+      <Component/>
     </DeleteColumnContext.Provider>
   )
 }

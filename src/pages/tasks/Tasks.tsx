@@ -3,12 +3,11 @@ import compose from 'compose-function'
 import {Box} from '@mantine/core'
 import classes from './Tasks.module.css'
 import {Subpage} from 'layouts'
-import {TasksPanel} from 'features'
+import {TasksPanel, CreateTaskModal, DeleteColumnModal} from 'features'
 import {useGetKanbanTasks} from 'hooks'
-import {CreateTaskModal, DeleteColumnModal} from 'features/tasks'
 import {CreateTaskProvider, DeleteColumnProvider} from 'contexts'
 
-const TasksPage = (): JSX.Element => {
+export const TasksPage = (): JSX.Element => {
   const {t} = useTranslation()
   const {isPending, isError, data} = useGetKanbanTasks()
 
