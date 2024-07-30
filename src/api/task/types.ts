@@ -12,3 +12,7 @@ export interface CreateTaskParams {
   task: Task
   columnId: string
 }
+
+export interface DeleteColumnParams {
+  columnId: string
+}

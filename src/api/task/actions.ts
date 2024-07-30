@@ -1,7 +1,16 @@
 import type {AxiosPromise} from 'axios'
 import {axiosInstance} from '../base'
-import {CREATE_TASK, GET_KANBAN_TASKS, UPDATE_KANBAN_TASKS} from './constants'
-import {CreateTaskParams, UpdateKanbanTasksParams} from './types'
+import {
+  CREATE_TASK,
+  DELETE_COLUMN,
+  GET_KANBAN_TASKS,
+  UPDATE_KANBAN_TASKS,
+} from './constants'
+import {
+  CreateTaskParams,
+  DeleteColumnParams,
+  UpdateKanbanTasksParams,
+} from './types'
 import {KanbanTasks, Task} from 'types'
 
 export const getKanbanTasks = async (): AxiosPromise<KanbanTasks> =>
@@ -14,6 +23,11 @@ export const updateKanbanTasks = async ({
 
 export const createTask = async ({
   task,
-  columnId
+  columnId,
 }: CreateTaskParams): AxiosPromise<Task> =>
   await axiosInstance.post(CREATE_TASK, {task, columnId})
+
+export const deleteColumn = async ({
+  columnId,
+}: DeleteColumnParams): AxiosPromise<KanbanTasks> =>
+  await axiosInstance.put(DELETE_COLUMN, {columnId})

@@ -1,5 +1,3 @@
-import {ReactNode} from 'react'
-
 export interface CreateTaskContextType {
   columnId: string
   setColumnId: (newColumnId: string) => void
@@ -9,5 +7,5 @@ export interface CreateTaskContextType {
 }
 
 export interface CreateTaskProviderProps {
-  children: ReactNode
+  children: JSX.Element
 }

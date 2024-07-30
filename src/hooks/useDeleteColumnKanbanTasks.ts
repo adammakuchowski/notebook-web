@@ -1,4 +1,4 @@
-import {UpdateKanbanTasksParams, taskApi} from 'api'
+import {DeleteColumnParams, taskApi} from 'api'
 import {AxiosResponse} from 'axios'
 import {
   UseMutationResult,
@@ -7,18 +7,18 @@ import {
 } from '@tanstack/react-query'
 import {KanbanTasks} from 'types'
 
-export const useUpdateKanbanTasks = (): UseMutationResult<
+export const useDeleteColumnKanbanTasks = (): UseMutationResult<
   AxiosResponse<KanbanTasks>,
   Error,
-  UpdateKanbanTasksParams
+  DeleteColumnParams
 > => {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: taskApi.updateKanbanTasks,
+    mutationFn: taskApi.deleteColumn,
     onSuccess: (response) => {
       if (!response || response.status !== 201) {
-        throw new Error('Error while update kanban tasks')
+        throw new Error('Error while delete column kanban tasks')
       }
 
       queryClient.invalidateQueries({queryKey: ['kanbanTasks']})
