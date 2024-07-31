@@ -3,7 +3,3 @@ export interface DeleteColumnContextType {
   openDeleteColumnModal: () => void
   closeDeleteColumnModal: () => void
 }
-
-export interface DeleteColumnProviderProps {
-  children: JSX.Element
-}

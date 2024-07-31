@@ -32,6 +32,16 @@
       "priorityDescription": "Ustaw priorytet zadania",
       "eventDate": "Data i czas",
       "eventDatePlaceholder": "Wprowadź datę i czas"
+    },
+    "deleteColumnModal": {
+      "modalTitle": "Usuń kolumnę",
+      "info": "Czy na pewno chcesz usunąć kolumnę: ",
+      "extraInfo": "Wszystkie zadania znajdujące się w tej kolumnie również zostaną usunięte."
+    },
+    "createColumnModal": {
+      "modalTitle": "Stwórz kolumnę",
+      "title": "Nazwa",
+      "titlePlaceholder": "Wprowadź nazwę kolumny"
     }
   },
   "settings": {

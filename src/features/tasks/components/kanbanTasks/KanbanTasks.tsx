@@ -5,6 +5,7 @@ import {
   DroppableProvided,
 } from 'react-beautiful-dnd'
 import {Box} from '@mantine/core'
+import {KanbanTasks as KanbanTasksType} from 'types'
 import classes from './KanbanTasks.module.css'
 import {Column} from './column'
 import {KanbanProps} from './types'
@@ -13,12 +14,17 @@ import {StrictModeDroppable} from './strictModeDroppable'
 export const KanbanTasks = ({
   initData,
   updateKanban,
+  setActionButtonDisabled
 }: KanbanProps): JSX.Element => {
-  const [data, setData] = useState(initData)
+  const [data, setData] = useState<KanbanTasksType>(initData)
 
   useEffect(() => {
     setData(initData)
   }, [initData])
+
+  useEffect(() => {
+    setActionButtonDisabled(data.columnOrder.length >= 6)
+  }, [data.columnOrder])
 
   const onDragEnd = async (result: DropResult): Promise<void> => {
     const {destination, source, draggableId, type} = result

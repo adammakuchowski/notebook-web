@@ -4,4 +4,5 @@ export type TasksPanelProps = {
   kanbanTasksData: KanbanTasks | undefined
   isPending: boolean
   isError: boolean
+  setActionButtonDisabled: (isDisabled: boolean) => void;
 }
