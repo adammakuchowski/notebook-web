@@ -1,5 +1,6 @@
-import {createContext, useContext} from 'react'
+import {createContext, useContext, useState} from 'react'
 import {useDisclosure} from '@mantine/hooks'
+import {ColumnType} from 'types'
 import {DeleteColumnContextType} from './types'
 
 const DeleteColumnContext = createContext<DeleteColumnContextType | undefined>(
@@ -7,6 +8,12 @@ const DeleteColumnContext = createContext<DeleteColumnContextType | undefined>(
 )
 
 export const DeleteColumnProvider = (Component: () => JSX.Element) => () => {
+  const [column, setColumn] = useState<ColumnType>({
+    id: '',
+    title: '',
+    taskIds: []
+  })
+
   const [
     deleteColumnModalOpened,
     {open: openDeleteColumnModal, close: closeDeleteColumnModal},
@@ -15,6 +22,8 @@ export const DeleteColumnProvider = (Component: () => JSX.Element) => () => {
   return (
     <DeleteColumnContext.Provider
       value={{
+        column,
+        setColumn,
         deleteColumnModalOpened,
         openDeleteColumnModal,
         closeDeleteColumnModal

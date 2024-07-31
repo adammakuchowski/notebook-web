@@ -9,28 +9,31 @@ export const ColumnHeader = ({
   provided,
   column,
 }: ColumnHeaderProps): JSX.Element => {
-  const {openDeleteColumnModal} = useDeleteColumnContext()
-  
+  const {openDeleteColumnModal, setColumn} = useDeleteColumnContext()
+
+  const onOpenDeleteColumnModal = (): void => {
+    setColumn(column)
+    openDeleteColumnModal()
+  }
+
   return (
     <Box className={classes.columnHeader}>
       <Title order={4} className={classes.title} {...provided.dragHandleProps}>
-        {t(`kanban.column.columnHeader.title.${column.title}`)}
+        {t(`kanban.column.columnHeader.title.${column.title}`, {defaultValue: `${column.title}`})}
       </Title>
-      <Menu shadow='md' width={200}>
+      <Menu shadow="md" width={200}>
         <Menu.Target>
-          <ActionIcon variant='transparent' className={classes.titleButton}>
+          <ActionIcon variant="transparent" className={classes.titleButton}>
             <IconDots stroke={2} />
           </ActionIcon>
         </Menu.Target>
 
         <Menu.Dropdown>
-          <Menu.Label>
-            {t(`kanban.column.columnHeader.menu.title`)}
-          </Menu.Label>
+          <Menu.Label>{t(`kanban.column.columnHeader.menu.title`)}</Menu.Label>
           <Menu.Item
-            color='red'
+            color="red"
             leftSection={<IconTrash style={{width: 14, height: 14}} />}
-            onClick={openDeleteColumnModal}
+            onClick={onOpenDeleteColumnModal}
           >
             {t(`kanban.column.columnHeader.menu.deleteColumn`)}
           </Menu.Item>

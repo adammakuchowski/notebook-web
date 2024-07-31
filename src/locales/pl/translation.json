@@ -1,6 +1,8 @@
 {
   "general": {
-    "create": "Stwórz"
+    "create": "Stwórz",
+    "delete": "Usuń",
+    "cancel": "Anuluj"
   },
   "login": {
     "title": "Logowanie",

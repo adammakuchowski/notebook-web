@@ -1,6 +1,8 @@
 {
   "general": {
-    "create": "Create"
+    "create": "Create",
+    "delete": "Delete",
+    "cancel": "Cancel"
   },
   "login": {
     "title": "Login",
