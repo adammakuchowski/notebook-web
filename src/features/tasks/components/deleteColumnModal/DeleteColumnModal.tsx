@@ -1,12 +1,12 @@
 import {useTranslation} from 'react-i18next'
 import {Box, Button, Flex, Modal, Text, Title} from '@mantine/core'
-import {useDeleteColumnKanbanTasks} from 'hooks'
+import {useDeleteColumn} from 'hooks'
 import {useDeleteColumnContext} from 'contexts'
 import classes from './DeleteColumnModal.module.css'
 
 export const DeleteColumnModal = (): JSX.Element => {
   const {t} = useTranslation()
-  const {mutate, isPending} = useDeleteColumnKanbanTasks()
+  const {mutate, isPending} = useDeleteColumn()
 
   const {deleteColumnModalOpened, closeDeleteColumnModal, column} =
     useDeleteColumnContext()
