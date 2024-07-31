@@ -1,7 +1,15 @@
 import {useTranslation} from 'react-i18next'
 import {useForm} from '@mantine/form'
 import {DateTimePicker} from '@mantine/dates'
-import {Box, Button, Modal, Select, TextInput, Textarea, Title} from '@mantine/core'
+import {
+  Box,
+  Button,
+  Modal,
+  Select,
+  TextInput,
+  Textarea,
+  Title,
+} from '@mantine/core'
 import {useCreateTaskContext} from 'contexts'
 import {useCreateTask} from 'hooks'
 import classes from './CreateTaskModal.module.css'
@@ -43,8 +51,9 @@ export const CreateTaskModal = (): JSX.Element => {
     <Modal
       opened={createTaskModalOpened}
       onClose={handleClose}
-      title= {<Title order={5}>{t('tasks.createTaskModal.modalTitle')}</Title>}
+      title={<Title order={5}>{t('tasks.createTaskModal.modalTitle')}</Title>}
       size={'lg'}
+      closeOnClickOutside={false}
     >
       <form
         onSubmit={form.onSubmit((values) =>
@@ -62,7 +71,7 @@ export const CreateTaskModal = (): JSX.Element => {
           withAsterisk
           label={t('tasks.createTaskModal.description')}
           placeholder={t('tasks.createTaskModal.descriptionPlaceholder')}
-          mt='md'
+          mt="md"
           {...form.getInputProps('description')}
           autosize
           minRows={4}
@@ -74,20 +83,20 @@ export const CreateTaskModal = (): JSX.Element => {
           description={t('tasks.createTaskModal.priorityDescription')}
           {...form.getInputProps('priority')}
           data={prioritySelectOptions}
-          mt='md'
+          mt="md"
         />
         <DateTimePicker
           label={t('tasks.createTaskModal.eventDate')}
           placeholder={t('tasks.createTaskModal.eventDatePlaceholder')}
           {...form.getInputProps('eventDate')}
-          mt='md'
+          mt="md"
         />
         <Box className={classes.createButtonContainer}>
+          <Button onClick={handleClose}>{t('general.cancel')}</Button>
           <Button
-            variant='filled'
-            type='submit'
+            variant="filled"
+            type="submit"
             disabled={!form.isValid()}
-            mt='lg'
             loading={isPending}
           >
             {t('general.create')}

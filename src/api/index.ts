@@ -5,6 +5,8 @@ export * as taskApi from './task'
 export type {AuthorizationToken, LoginData} from './user'
 
 export type {
+  CreateTaskParams,
   UpdateKanbanTasksParams,
   DeleteColumnParams,
+  CreateColumnParams
 } from './task'

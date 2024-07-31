@@ -13,6 +13,7 @@ export const TasksPanel = ({
   kanbanTasksData,
   isPending,
   isError,
+  setActionButtonDisabled
 }: TasksPanelProps): JSX.Element => {
   const {mutate} = useUpdateKanbanTasks()
 
@@ -29,6 +30,7 @@ export const TasksPanel = ({
       <KanbanTasks
         initData={kanbanTasksData}
         updateKanban={mutate}
+        setActionButtonDisabled={setActionButtonDisabled}
       />
     </Box>
   )

@@ -1,8 +1,7 @@
-import {taskApi} from 'api'
 import {AxiosResponse} from 'axios'
 import {UseMutationResult, useMutation, useQueryClient} from '@tanstack/react-query'
-import {Task} from 'types/task'
-import {CreateTaskParams} from 'api/task/types'
+import {CreateTaskParams, taskApi} from 'api'
+import {Task} from 'types'
 
 export const useCreateTask = (): UseMutationResult<
   AxiosResponse<Task>,

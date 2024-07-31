@@ -39,6 +39,11 @@
       "modalTitle": "Delete column",
       "info": "Are you sure you want to delete the column:",
       "extraInfo": "All tasks in this column will also be deleted."
+    },
+    "createColumnModal": {
+      "modalTitle": "Create column",
+      "title": "Title",
+      "titlePlaceholder": "Enter column title"
     }
   },
   "settings": {

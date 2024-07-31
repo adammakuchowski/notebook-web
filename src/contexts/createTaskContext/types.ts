@@ -5,7 +5,3 @@ export interface CreateTaskContextType {
   openCreateTaskModal: () => void
   closeCreateTaskModal: () => void
 }
-
-export interface CreateTaskProviderProps {
-  children: JSX.Element
-}
