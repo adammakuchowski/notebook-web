@@ -10,6 +10,7 @@ import classes from './KanbanTasks.module.css'
 import {Column} from './column'
 import {KanbanProps} from './types'
 import {StrictModeDroppable} from './strictModeDroppable'
+import {COLUMN_LIMIT} from './constants'
 
 export const KanbanTasks = ({
   initData,
@@ -23,7 +24,7 @@ export const KanbanTasks = ({
   }, [initData])
 
   useEffect(() => {
-    setActionButtonDisabled(data.columnOrder.length >= 6)
+    setActionButtonDisabled(data.columnOrder.length >= COLUMN_LIMIT)
   }, [data.columnOrder])
 
   const onDragEnd = async (result: DropResult): Promise<void> => {
