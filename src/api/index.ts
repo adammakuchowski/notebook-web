@@ -6,6 +6,7 @@ export type {AuthorizationToken, LoginData} from './user'
 
 export type {
   CreateTaskParams,
+  EditColumnParams,
   UpdateKanbanTasksParams,
   DeleteColumnParams,
   CreateColumnParams

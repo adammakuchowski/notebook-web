@@ -1,6 +1,7 @@
 {
   "general": {
     "create": "Create",
+    "edit": "Edit",
     "delete": "Delete",
     "cancel": "Cancel"
   },
