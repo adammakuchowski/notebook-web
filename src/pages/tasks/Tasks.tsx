@@ -6,14 +6,14 @@ import {
   TasksPanel,
   CreateTaskModal,
   DeleteColumnModal,
-  CreateColumnModal,
+  ManageColumnModal,
 } from 'features'
 import {useGetKanbanTasks} from 'hooks'
 import {
-  CreateColumnProvider,
+  ManageColumnProvider,
   CreateTaskProvider,
   DeleteColumnProvider,
-  useCreateColumnContext,
+  useManageColumnContext,
 } from 'contexts'
 import classes from './Tasks.module.css'
 import {useState} from 'react'
@@ -22,7 +22,7 @@ export const TasksPage = (): JSX.Element => {
   const {t} = useTranslation()
   const {isPending, isError, data} = useGetKanbanTasks()
   const [actionButtonDisabled, setActionButtonDisabled] = useState(false)
-  const {openCreateColumnModal} = useCreateColumnContext()
+  const {openManageColumnModal} = useManageColumnContext()
 
   return (
     <Box className={classes.pageContainer}>
@@ -31,7 +31,7 @@ export const TasksPage = (): JSX.Element => {
         actionButton
         actionButtonDisabled={actionButtonDisabled}
         actionButtonTitle={t('tasks.actionButton')}
-        actionButtonCallback={openCreateColumnModal}
+        actionButtonCallback={openManageColumnModal}
       >
         <Box className={classes.tasksContainer}>
           <TasksPanel
@@ -44,7 +44,7 @@ export const TasksPage = (): JSX.Element => {
       </Subpage>
       <CreateTaskModal />
       <DeleteColumnModal />
-      <CreateColumnModal />
+      <ManageColumnModal />
     </Box>
   )
 }
@@ -52,5 +52,5 @@ export const TasksPage = (): JSX.Element => {
 export const Tasks = compose(
   CreateTaskProvider,
   DeleteColumnProvider,
-  CreateColumnProvider,
+  ManageColumnProvider,
 )(TasksPage)

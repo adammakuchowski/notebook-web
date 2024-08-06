@@ -41,8 +41,9 @@
       "info": "Czy na pewno chcesz usunąć kolumnę: ",
       "extraInfo": "Wszystkie zadania znajdujące się w tej kolumnie również zostaną usunięte."
     },
-    "createColumnModal": {
-      "modalTitle": "Stwórz kolumnę",
+    "manageColumnModal": {
+      "createColumn": "Stwórz kolumnę",
+      "editColumn": "Edytuj kolumnę",
       "title": "Nazwa",
       "titlePlaceholder": "Wprowadź nazwę kolumny"
     }

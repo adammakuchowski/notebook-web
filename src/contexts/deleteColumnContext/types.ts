@@ -1,7 +1,7 @@
 import {ColumnType} from 'types'
 
 export interface DeleteColumnContextType {
-  column: ColumnType;
+  column: ColumnType
   setColumn: (newColumn: ColumnType) => void
   deleteColumnModalOpened: boolean
   openDeleteColumnModal: () => void
