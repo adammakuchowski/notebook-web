@@ -1,6 +1,7 @@
 {
   "general": {
     "create": "Create",
+    "edit": "Edit",
     "delete": "Delete",
     "cancel": "Cancel"
   },
@@ -40,8 +41,9 @@
       "info": "Are you sure you want to delete the column:",
       "extraInfo": "All tasks in this column will also be deleted."
     },
-    "createColumnModal": {
-      "modalTitle": "Create column",
+    "manageColumnModal": {
+      "createColumn": "Create column",
+      "editColumn": "Edit column",
       "title": "Title",
       "titlePlaceholder": "Enter column title"
     }
@@ -56,12 +58,6 @@
   "kanban": {
     "column": {
       "columnHeader": {
-        "title": {
-          "toDo": "To do",
-          "blocked": "Blocked",
-          "inProgress": "In progess",
-          "done": "Done"
-        },
         "menu": {
           "title": "Settings",
           "deleteColumn": "Delete column"

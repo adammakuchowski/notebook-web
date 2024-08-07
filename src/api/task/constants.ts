@@ -9,3 +9,5 @@ export const CREATE_TASK = `${BASE_ROOT_URL}/createTask`
 export const DELETE_COLUMN = `${BASE_ROOT_URL}/deleteColumn`
 
 export const CREATE_COLUMN = `${BASE_ROOT_URL}/createColumn`
+
+export const EDIT_COLUMN = `${BASE_ROOT_URL}/editColumn`

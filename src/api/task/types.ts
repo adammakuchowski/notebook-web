@@ -18,5 +18,11 @@ export interface DeleteColumnParams {
 }
 
 export interface CreateColumnParams {
+  columnId?: string
+  title: string
+}
+
+export interface EditColumnParams {
+  columnId?: string
   title: string
 }
