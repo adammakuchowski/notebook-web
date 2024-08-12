@@ -1,0 +1,12 @@
+.taskDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

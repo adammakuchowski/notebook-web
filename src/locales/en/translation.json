@@ -46,6 +46,9 @@
       "editColumn": "Edit column",
       "title": "Title",
       "titlePlaceholder": "Enter column title"
+    },
+    "taskDetailsModal": {
+      "title": "Task details"
     }
   },
   "settings": {

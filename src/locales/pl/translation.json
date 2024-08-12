@@ -46,6 +46,9 @@
       "editColumn": "Edytuj kolumnę",
       "title": "Nazwa",
       "titlePlaceholder": "Wprowadź nazwę kolumny"
+    },
+    "taskDetailsModal": {
+      "title": "Szczegóły zadania"
     }
   },
   "settings": {
