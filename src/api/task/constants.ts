@@ -6,7 +6,7 @@ export const UPDATE_KANBAN_TASKS = `${BASE_ROOT_URL}/updateKanbanTasks`
 
 export const CREATE_TASK = `${BASE_ROOT_URL}/createTask`
 
-export const GET_TASK = `${BASE_ROOT_URL}//getTask`
+export const GET_TASK = `${BASE_ROOT_URL}/getTask`
 
 export const DELETE_COLUMN = `${BASE_ROOT_URL}/deleteColumn`
 
