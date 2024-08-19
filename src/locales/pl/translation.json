@@ -3,7 +3,8 @@
     "create": "Stwórz",
     "edit": "Edytuj",
     "delete": "Usuń",
-    "cancel": "Anuluj"
+    "cancel": "Anuluj",
+    "close": "Zamknij"
   },
   "login": {
     "title": "Logowanie",
@@ -26,15 +27,7 @@
     "actionButton": "Dodaj kolumnę",
     "createTask": "Dodaj zadanie",
     "createTaskModal": {
-      "modalTitle": "Stwórz nowe zadanie",
-      "title": "Tytuł",
-      "titlePlaceholder": "Wprowadź tytuł zadania",
-      "description": "Opis",
-      "descriptionPlaceholder": "Wprowadź opis zadania",
-      "priority": "Priorytet",
-      "priorityDescription": "Ustaw priorytet zadania",
-      "eventDate": "Data i czas",
-      "eventDatePlaceholder": "Wprowadź datę i czas"
+      "modalTitle": "Stwórz nowe zadanie"
     },
     "deleteColumnModal": {
       "modalTitle": "Usuń kolumnę",
@@ -49,6 +42,16 @@
     },
     "taskDetailsModal": {
       "title": "Szczegóły zadania"
+    },
+    "taskModal": {
+      "title": "Tytuł",
+      "titlePlaceholder": "Wprowadź tytuł zadania",
+      "description": "Opis",
+      "descriptionPlaceholder": "Wprowadź opis zadania",
+      "priority": "Priorytet",
+      "priorityDescription": "Ustaw priorytet zadania",
+      "eventDate": "Data i czas",
+      "eventDatePlaceholder": "Wprowadź datę i czas"
     }
   },
   "settings": {

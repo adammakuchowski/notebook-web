@@ -63,14 +63,14 @@ export const CreateTaskModal = (): JSX.Element => {
         <TextInput
           data-autofocus
           withAsterisk
-          label={t('tasks.createTaskModal.title')}
-          placeholder={t('tasks.createTaskModal.titlePlaceholder')}
+          label={t('tasks.taskModal.title')}
+          placeholder={t('tasks.taskModal.titlePlaceholder')}
           {...form.getInputProps('title')}
         />
         <Textarea
           withAsterisk
-          label={t('tasks.createTaskModal.description')}
-          placeholder={t('tasks.createTaskModal.descriptionPlaceholder')}
+          label={t('tasks.taskModal.description')}
+          placeholder={t('tasks.taskModal.descriptionPlaceholder')}
           mt="md"
           {...form.getInputProps('description')}
           autosize
@@ -79,15 +79,15 @@ export const CreateTaskModal = (): JSX.Element => {
         />
         <Select
           withAsterisk
-          label={t('tasks.createTaskModal.priority')}
-          description={t('tasks.createTaskModal.priorityDescription')}
+          label={t('tasks.taskModal.priority')}
+          description={t('tasks.taskModal.priorityDescription')}
           {...form.getInputProps('priority')}
           data={prioritySelectOptions}
           mt="md"
         />
         <DateTimePicker
-          label={t('tasks.createTaskModal.eventDate')}
-          placeholder={t('tasks.createTaskModal.eventDatePlaceholder')}
+          label={t('tasks.taskModal.eventDate')}
+          placeholder={t('tasks.taskModal.eventDatePlaceholder')}
           {...form.getInputProps('eventDate')}
           mt="md"
         />
