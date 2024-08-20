@@ -12,7 +12,7 @@ import {
 import {useGetKanbanTasks} from 'hooks'
 import {
   ManageColumnProvider,
-  CreateTaskProvider,
+  ManageTaskProvider,
   DeleteColumnProvider,
   TaskDetailsProvider,
   useManageColumnContext,
@@ -53,7 +53,7 @@ export const TasksPage = (): JSX.Element => {
 }
 
 export const Tasks = compose(
-  CreateTaskProvider,
+  ManageTaskProvider,
   DeleteColumnProvider,
   ManageColumnProvider,
   TaskDetailsProvider,

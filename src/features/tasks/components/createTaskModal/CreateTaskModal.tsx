@@ -10,15 +10,15 @@ import {
   Textarea,
   Title,
 } from '@mantine/core'
-import {useCreateTaskContext} from 'contexts'
+import {useManageTaskContext} from 'contexts'
 import {useCreateTask} from 'hooks'
 import classes from './CreateTaskModal.module.css'
 
 export const CreateTaskModal = (): JSX.Element => {
   const {t} = useTranslation()
   const {mutate, isPending} = useCreateTask()
-  const {closeCreateTaskModal, createTaskModalOpened, columnId} =
-    useCreateTaskContext()
+  const {closeManageTaskModal, manageTaskModalOpened, column} =
+    useManageTaskContext()
 
   const form = useForm({
     initialValues: {
@@ -44,12 +44,12 @@ export const CreateTaskModal = (): JSX.Element => {
 
   const handleClose = (): void => {
     form.reset()
-    closeCreateTaskModal()
+    closeManageTaskModal()
   }
 
   return (
     <Modal
-      opened={createTaskModalOpened}
+      opened={manageTaskModalOpened}
       onClose={handleClose}
       title={<Title order={5}>{t('tasks.createTaskModal.modalTitle')}</Title>}
       size={'lg'}
@@ -57,7 +57,7 @@ export const CreateTaskModal = (): JSX.Element => {
     >
       <form
         onSubmit={form.onSubmit((values) =>
-          mutate({task: values, columnId}, {onSuccess: handleClose}),
+          mutate({task: values, columnId: column.id}, {onSuccess: handleClose}),
         )}
       >
         <TextInput

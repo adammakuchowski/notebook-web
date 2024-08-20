@@ -5,7 +5,7 @@ import {
 } from 'react-beautiful-dnd'
 import {useTranslation} from 'react-i18next'
 import {Box, UnstyledButton} from '@mantine/core'
-import {useCreateTaskContext} from 'contexts'
+import {useManageTaskContext} from 'contexts'
 import classes from './Column.module.css'
 import {Task} from '../task'
 import {ColumnProps} from '../types'
@@ -14,11 +14,11 @@ import {ColumnHeader} from './columnHeader'
 
 export const Column = ({column, tasks, index}: ColumnProps): JSX.Element => {
   const {t} = useTranslation()
-  const {openCreateTaskModal, setColumnId} = useCreateTaskContext()
+  const {openManageTaskModal, setColumn} = useManageTaskContext()
 
   const onOpenCreateTaskModal = (): void => {
-    setColumnId(column.id)
-    openCreateTaskModal()
+    setColumn(column)
+    openManageTaskModal()
   }
 
   return (
