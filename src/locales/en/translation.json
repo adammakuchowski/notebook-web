@@ -3,7 +3,8 @@
     "create": "Create",
     "edit": "Edit",
     "delete": "Delete",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "close": "Close"
   },
   "login": {
     "title": "Login",
@@ -26,15 +27,7 @@
     "actionButton": "Add column",
     "createTask": "Add task",
     "createTaskModal": {
-      "modalTitle": "Create new task",
-      "title": "Title",
-      "titlePlaceholder": "Enter task title",
-      "description": "Description",
-      "descriptionPlaceholder": "Enter task description",
-      "priority": "Priorytet",
-      "priorityDescription": "Set task priority",
-      "eventDate": "Date and time",
-      "eventDatePlaceholder": "Enter date and time"
+      "modalTitle": "Create new task"
     },
     "deleteColumnModal": {
       "modalTitle": "Delete column",
@@ -46,6 +39,19 @@
       "editColumn": "Edit column",
       "title": "Title",
       "titlePlaceholder": "Enter column title"
+    },
+    "taskDetailsModal": {
+      "title": "Task details"
+    },
+    "taskModal": {
+      "title": "Title",
+      "titlePlaceholder": "Enter task title",
+      "description": "Description",
+      "descriptionPlaceholder": "Enter task description",
+      "priority": "Priorytet",
+      "priorityDescription": "Set task priority",
+      "eventDate": "Date and time",
+      "eventDatePlaceholder": "Enter date and time"
     }
   },
   "settings": {

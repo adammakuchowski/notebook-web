@@ -6,14 +6,16 @@ import {
   DELETE_COLUMN,
   EDIT_COLUMN,
   GET_KANBAN_TASKS,
+  GET_TASK,
   UPDATE_KANBAN_TASKS,
 } from './constants'
 import {
   CreateColumnParams,
   CreateTaskParams,
+  UpdateKanbanTasksParams,
   DeleteColumnParams,
   EditColumnParams,
-  UpdateKanbanTasksParams,
+  GetTaskDetailsParams,
 } from './types'
 import {KanbanTasks, Task} from 'types'
 
@@ -30,6 +32,11 @@ export const createTask = async ({
   columnId,
 }: CreateTaskParams): AxiosPromise<Task> =>
   await axiosInstance.post(CREATE_TASK, {task, columnId})
+
+export const getTaskDetails = async ({
+  taskId,
+}: GetTaskDetailsParams): AxiosPromise<Task> =>
+  await axiosInstance.get(`${GET_TASK}/${taskId}`)
 
 export const deleteColumn = async ({
   columnId,

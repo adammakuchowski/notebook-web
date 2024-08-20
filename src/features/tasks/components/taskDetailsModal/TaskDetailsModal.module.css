@@ -1,0 +1,33 @@
+.taskDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.mainTaskInformation {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 75%;
+}
+
+.taskDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 25%;
+}
+
+.taskDetailsButtonActons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

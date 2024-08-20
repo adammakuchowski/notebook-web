@@ -7,12 +7,14 @@ import {
   CreateTaskModal,
   DeleteColumnModal,
   ManageColumnModal,
+  TaskDetailsModal,
 } from 'features'
 import {useGetKanbanTasks} from 'hooks'
 import {
   ManageColumnProvider,
   CreateTaskProvider,
   DeleteColumnProvider,
+  TaskDetailsProvider,
   useManageColumnContext,
 } from 'contexts'
 import classes from './Tasks.module.css'
@@ -45,6 +47,7 @@ export const TasksPage = (): JSX.Element => {
       <CreateTaskModal />
       <DeleteColumnModal />
       <ManageColumnModal />
+      <TaskDetailsModal/>
     </Box>
   )
 }
@@ -53,4 +56,5 @@ export const Tasks = compose(
   CreateTaskProvider,
   DeleteColumnProvider,
   ManageColumnProvider,
+  TaskDetailsProvider,
 )(TasksPage)
