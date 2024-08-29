@@ -9,5 +9,6 @@ export type {
   EditColumnParams,
   UpdateKanbanTasksParams,
   DeleteColumnParams,
-  CreateColumnParams
+  CreateColumnParams,
+  UpdateTaskParams,
 } from './task'

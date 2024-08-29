@@ -16,7 +16,7 @@ export const Column = ({column, tasks, index}: ColumnProps): JSX.Element => {
   const {t} = useTranslation()
   const {openManageTaskModal, setColumn} = useManageTaskContext()
 
-  const onOpenCreateTaskModal = (): void => {
+  const onOpenManageTaskModal = (): void => {
     setColumn(column)
     openManageTaskModal()
   }
@@ -46,7 +46,7 @@ export const Column = ({column, tasks, index}: ColumnProps): JSX.Element => {
           </StrictModeDroppable>
           <UnstyledButton
             className={classes.addTaskButton}
-            onClick={onOpenCreateTaskModal}
+            onClick={onOpenManageTaskModal}
           >
             {t('tasks.createTask')}
           </UnstyledButton>

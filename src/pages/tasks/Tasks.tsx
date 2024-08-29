@@ -4,7 +4,7 @@ import {Box} from '@mantine/core'
 import {Subpage} from 'layouts'
 import {
   TasksPanel,
-  CreateTaskModal,
+  ManageTaskModal,
   DeleteColumnModal,
   ManageColumnModal,
   TaskDetailsModal,
@@ -44,7 +44,7 @@ export const TasksPage = (): JSX.Element => {
           />
         </Box>
       </Subpage>
-      <CreateTaskModal />
+      <ManageTaskModal />
       <DeleteColumnModal />
       <ManageColumnModal />
       <TaskDetailsModal/>

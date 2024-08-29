@@ -3,7 +3,7 @@ export {LoginForm, TopBar} from './login'
 export {SettingsPanel} from './settings'
 export {
   TasksPanel,
-  CreateTaskModal,
+  ManageTaskModal,
   DeleteColumnModal,
   ManageColumnModal,
   TaskDetailsModal,

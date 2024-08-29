@@ -1,6 +1,6 @@
 import {createContext, useState, useContext} from 'react'
 import {useDisclosure} from '@mantine/hooks'
-import {ColumnType} from 'types'
+import {ColumnType, Task} from 'types'
 import {ManageTaskContextType} from './types'
 
 const ManageTaskContext = createContext<ManageTaskContextType | undefined>(
@@ -8,12 +8,13 @@ const ManageTaskContext = createContext<ManageTaskContextType | undefined>(
 )
 
 export const ManageTaskProvider = (Component: () => JSX.Element) => () => {
+  const [task, setTask] = useState<Task>()
   const [column, setColumn] = useState<ColumnType>({
     id: '',
     title: '',
     taskIds: []
   })
-  
+
   const [
     manageTaskModalOpened,
     {open: openManageTaskModal, close: closeManageTaskModal},
@@ -24,6 +25,8 @@ export const ManageTaskProvider = (Component: () => JSX.Element) => () => {
       value={{
         column,
         setColumn,
+        task,
+        setTask,
         manageTaskModalOpened,
         openManageTaskModal,
         closeManageTaskModal,

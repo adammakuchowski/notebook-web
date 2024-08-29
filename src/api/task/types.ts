@@ -10,11 +10,16 @@ export interface UpdateKanbanTasksParams {
 
 export interface CreateTaskParams {
   task: Task
-  columnId: string
+  columnId?: string
+}
+
+export interface UpdateTaskParams {
+  task: Task
+  columnId?: string
 }
 
 export interface GetTaskDetailsParams {
-  taskId: string
+  taskId?: string
 }
 
 export interface DeleteColumnParams {
