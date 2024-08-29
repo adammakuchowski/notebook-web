@@ -20,7 +20,7 @@ export const useUpdateTask = (): UseMutationResult<
       queryClient.invalidateQueries({queryKey: ['kanbanTasks']})
     },
     onError: () => {
-      console.log(555)
+      // TODO: init login error notification
     },
   })
 }

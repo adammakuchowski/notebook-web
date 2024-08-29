@@ -55,8 +55,6 @@ export const ManageTaskModal = (): JSX.Element => {
   ]
 
   const handleClose = (): void => {
-    console.log(123)
-
     form.reset()
     closeManageTaskModal()
     setTask()
