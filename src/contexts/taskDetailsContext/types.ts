@@ -1,6 +1,8 @@
+import {Task} from 'types/task'
+
 export interface TaskDetailsContextType {
-  taskId: string
-  setTaskId: (newTaskId: string) => void
+  task: Task | undefined
+  setTask: (newTask?: Task) => void
   taskDetailsModalOpened: boolean
   openTaskDetailsModal: () => void
   closeTaskDetailsModal: () => void

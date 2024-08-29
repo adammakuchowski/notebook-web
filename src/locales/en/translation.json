@@ -26,8 +26,9 @@
     "title": "Tasks",
     "actionButton": "Add column",
     "createTask": "Add task",
-    "createTaskModal": {
-      "modalTitle": "Create new task"
+    "manageTaskModal": {
+      "createTaskModalTitle": "Create new task",
+      "editTaskModalTitle": "Edit task"
     },
     "deleteColumnModal": {
       "modalTitle": "Delete column",

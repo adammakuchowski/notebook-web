@@ -1,5 +1,5 @@
 export {TasksPanel} from './components/tasksPanel'
-export {CreateTaskModal} from './components/createTaskModal'
+export {ManageTaskModal} from './components/manageTaskModal'
 export {DeleteColumnModal} from './components/deleteColumnModal'
 export {ManageColumnModal} from './components/manageColumnModal'
 export {TaskDetailsModal} from './components/taskDetailsModal'

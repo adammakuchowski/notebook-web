@@ -4,7 +4,7 @@ import {Box} from '@mantine/core'
 import {Subpage} from 'layouts'
 import {
   TasksPanel,
-  CreateTaskModal,
+  ManageTaskModal,
   DeleteColumnModal,
   ManageColumnModal,
   TaskDetailsModal,
@@ -12,7 +12,7 @@ import {
 import {useGetKanbanTasks} from 'hooks'
 import {
   ManageColumnProvider,
-  CreateTaskProvider,
+  ManageTaskProvider,
   DeleteColumnProvider,
   TaskDetailsProvider,
   useManageColumnContext,
@@ -44,7 +44,7 @@ export const TasksPage = (): JSX.Element => {
           />
         </Box>
       </Subpage>
-      <CreateTaskModal />
+      <ManageTaskModal />
       <DeleteColumnModal />
       <ManageColumnModal />
       <TaskDetailsModal/>
@@ -53,7 +53,7 @@ export const TasksPage = (): JSX.Element => {
 }
 
 export const Tasks = compose(
-  CreateTaskProvider,
+  ManageTaskProvider,
   DeleteColumnProvider,
   ManageColumnProvider,
   TaskDetailsProvider,

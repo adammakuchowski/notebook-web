@@ -34,10 +34,10 @@ const PriorityDot = ({priority}: {priority: string}): JSX.Element => {
 }
 
 export const Task = ({task, index}: TaskProps): JSX.Element => {
-  const {openTaskDetailsModal, setTaskId} = useTaskDetailsContext()
+  const {openTaskDetailsModal, setTask} = useTaskDetailsContext()
 
   const onTaskDetailsOpen = (): void => {
-    setTaskId(task.id)
+    setTask(task)
     openTaskDetailsModal()
   }
 

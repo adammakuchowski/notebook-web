@@ -26,8 +26,9 @@
     "title": "Zadania",
     "actionButton": "Dodaj kolumnę",
     "createTask": "Dodaj zadanie",
-    "createTaskModal": {
-      "modalTitle": "Stwórz nowe zadanie"
+    "manageTaskModal": {
+      "createTaskModalTitle": "Stwórz nowe zadanie",
+      "editTaskModalTitle": "Edytuj zadanie"
     },
     "deleteColumnModal": {
       "modalTitle": "Usuń kolumnę",

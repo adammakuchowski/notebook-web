@@ -1,18 +1,25 @@
 import {useTranslation} from 'react-i18next'
 import moment from 'moment'
 import {Box, Loader, Modal, Title, Text, Flex, Button} from '@mantine/core'
-import {useTaskDetailsContext} from 'contexts'
+import {useManageTaskContext, useTaskDetailsContext} from 'contexts'
 import {useGetTaskDetails} from 'hooks'
 import classes from './TaskDetailsModal.module.css'
 
 export const TaskDetailsModal = (): JSX.Element => {
   const {t} = useTranslation()
-  const {taskId, taskDetailsModalOpened, closeTaskDetailsModal} =
+  const {openManageTaskModal, setTask} = useManageTaskContext()
+  const {task, taskDetailsModalOpened, closeTaskDetailsModal} =
     useTaskDetailsContext()
 
-  const {isPending, data} = useGetTaskDetails(taskId)
-
+  const {isPending, data} = useGetTaskDetails(task?.id as string)
   const hasTime = moment(data?.data.eventDate).format('HH:mm:ss') !== '00:00:00'
+
+  // TODO: remove _id from Task type
+  const onTaskEdit = (): void => {
+    setTask(data?.data)
+    closeTaskDetailsModal()
+    openManageTaskModal()
+  }
 
   return (
     <Modal
@@ -62,7 +69,7 @@ export const TaskDetailsModal = (): JSX.Element => {
             <Button onClick={closeTaskDetailsModal}>
               {t('general.close')}
             </Button>
-            <Button>{t('general.edit')}</Button>
+            <Button onClick={onTaskEdit}>{t('general.edit')}</Button>
           </Box>
         </Box>
       )}

@@ -1,13 +1,14 @@
 import {createContext, useState, useContext} from 'react'
 import {useDisclosure} from '@mantine/hooks'
 import {TaskDetailsContextType} from './types'
+import {Task} from 'types/task'
 
 const TaskDetailsContext = createContext<TaskDetailsContextType | undefined>(
   undefined,
 )
 
 export const TaskDetailsProvider = (Component: () => JSX.Element) => () => {
-  const [taskId, setTaskId] = useState<string>('')
+  const [task, setTask] = useState<Task>()
   const [
     taskDetailsModalOpened,
     {open: openTaskDetailsModal, close: closeTaskDetailsModal},
@@ -16,8 +17,8 @@ export const TaskDetailsProvider = (Component: () => JSX.Element) => () => {
   return (
     <TaskDetailsContext.Provider
       value={{
-        taskId,
-        setTaskId,
+        task,
+        setTask,
         taskDetailsModalOpened,
         openTaskDetailsModal,
         closeTaskDetailsModal,

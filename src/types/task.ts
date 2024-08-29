@@ -6,8 +6,10 @@ export enum Priority {
 }
 
 export interface Task {
+  _id?: string
   title: string
   description: string
-  priority: Priority | null
-  eventDate: Date | null
+  priority?: Priority | string | null
+  eventDate?: Date | null;
+  [key: string]: unknown
 }

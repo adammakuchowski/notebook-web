@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import {useTranslation} from 'react-i18next'
 import {useForm} from '@mantine/form'
 import {DateTimePicker} from '@mantine/dates'
@@ -10,30 +11,41 @@ import {
   Textarea,
   Title,
 } from '@mantine/core'
-import {useCreateTaskContext} from 'contexts'
-import {useCreateTask} from 'hooks'
-import classes from './CreateTaskModal.module.css'
+import {useManageTaskContext} from 'contexts'
+import {useCreateTask, useUpdateTask} from 'hooks'
+import classes from './ManageTaskModal.module.css'
+import {InitialManageTaskModalFormValues} from './types'
+import {initialValues} from './constants'
+import {ModalMode} from 'types'
 
-export const CreateTaskModal = (): JSX.Element => {
+export const ManageTaskModal = (): JSX.Element => {
   const {t} = useTranslation()
-  const {mutate, isPending} = useCreateTask()
-  const {closeCreateTaskModal, createTaskModalOpened, columnId} =
-    useCreateTaskContext()
 
-  const form = useForm({
-    initialValues: {
-      title: '',
-      description: '',
-      priority: null,
-      eventDate: null,
-    },
+  const {closeManageTaskModal, manageTaskModalOpened, column, task, setTask} =
+    useManageTaskContext()
 
+  const mode = task?._id ? ModalMode.EDIT : ModalMode.CREATE
+
+  const {mutate, isPending} =
+    mode === ModalMode.CREATE ? useCreateTask() : useUpdateTask()
+
+  const form = useForm<InitialManageTaskModalFormValues>({
+    initialValues,
     validate: {
-      title: (value) => !value,
-      description: (value) => !value,
-      priority: (value) => !value,
+      title: (value: string) => !value,
+      description: (value: string) => !value,
+      priority: (value: string) => !value,
     },
   })
+
+  useEffect(() => {
+    form.setValues({
+      title: task?.title ?? '',
+      description: task?.description ?? '',
+      priority: task?.priority ?? '',
+      eventDate: task?.eventDate ? new Date(task?.eventDate) : undefined,
+    })
+  }, [task?._id])
 
   const prioritySelectOptions = [
     {label: t('priority.low'), value: 'low'},
@@ -44,20 +56,30 @@ export const CreateTaskModal = (): JSX.Element => {
 
   const handleClose = (): void => {
     form.reset()
-    closeCreateTaskModal()
+    closeManageTaskModal()
+    setTask()
   }
 
   return (
     <Modal
-      opened={createTaskModalOpened}
+      opened={manageTaskModalOpened}
       onClose={handleClose}
-      title={<Title order={5}>{t('tasks.createTaskModal.modalTitle')}</Title>}
+      title={
+        <Title order={5}>
+          {mode === ModalMode.CREATE
+            ? t('tasks.manageTaskModal.createTaskModalTitle')
+            : t('tasks.manageTaskModal.editTaskModalTitle')}
+        </Title>
+      }
       size={'lg'}
       closeOnClickOutside={false}
     >
       <form
         onSubmit={form.onSubmit((values) =>
-          mutate({task: values, columnId}, {onSuccess: handleClose}),
+          mutate(
+            {task: {...values, id: task?._id}, columnId: column.id},
+            {onSuccess: handleClose},
+          ),
         )}
       >
         <TextInput
@@ -91,7 +113,7 @@ export const CreateTaskModal = (): JSX.Element => {
           {...form.getInputProps('eventDate')}
           mt="md"
         />
-        <Box className={classes.createButtonContainer}>
+        <Box className={classes.buttonsContainer}>
           <Button onClick={handleClose}>{t('general.cancel')}</Button>
           <Button
             variant="filled"
@@ -99,7 +121,9 @@ export const CreateTaskModal = (): JSX.Element => {
             disabled={!form.isValid()}
             loading={isPending}
           >
-            {t('general.create')}
+            {mode === ModalMode.CREATE
+              ? t('general.create')
+              : t('general.edit')}
           </Button>
         </Box>
       </form>
