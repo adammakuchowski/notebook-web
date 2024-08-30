@@ -11,10 +11,9 @@ export const TaskDetailsModal = (): JSX.Element => {
   const {task, taskDetailsModalOpened, closeTaskDetailsModal} =
     useTaskDetailsContext()
 
-  const {isPending, data} = useGetTaskDetails(task?.id as string)
+  const {isPending, data} = useGetTaskDetails(task?._id)
   const hasTime = moment(data?.data.eventDate).format('HH:mm:ss') !== '00:00:00'
 
-  // TODO: remove _id from Task type
   const onTaskEdit = (): void => {
     setTask(data?.data)
     closeTaskDetailsModal()

@@ -77,7 +77,7 @@ export const ManageTaskModal = (): JSX.Element => {
       <form
         onSubmit={form.onSubmit((values) =>
           mutate(
-            {task: {...values, id: task?._id}, columnId: column.id},
+            {task: {...values, _id: task?._id}, columnId: column.id},
             {onSuccess: handleClose},
           ),
         )}
