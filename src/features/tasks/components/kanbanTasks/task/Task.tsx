@@ -42,7 +42,7 @@ export const Task = ({task, index}: TaskProps): JSX.Element => {
   }
 
   return (
-    <Draggable draggableId={task.id} index={index} key={task.id}>
+    <Draggable draggableId={task._id} index={index} key={task._id}>
       {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
         <Box
           className={

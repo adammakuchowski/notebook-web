@@ -9,4 +9,5 @@ export const useGetTaskDetails = (
   useQuery({
     queryKey: ['taskDetails', {taskId}],
     queryFn: async () => await taskApi.getTaskDetails({taskId}),
+    enabled: Boolean(taskId),
   })

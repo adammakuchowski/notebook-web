@@ -11,5 +11,4 @@ export interface Task {
   description: string
   priority?: Priority | string | null
   eventDate?: Date | null;
-  [key: string]: unknown
 }
