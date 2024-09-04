@@ -1,13 +1,13 @@
 import {createContext, useState, useContext} from 'react'
 import {useDisclosure} from '@mantine/hooks'
 import {ColumnType, Task} from 'types'
-import {ManageTaskContextType} from './types'
+import {KanbanTaskContextType} from './types'
 
-const ManageTaskContext = createContext<ManageTaskContextType | undefined>(
+const KanbanTaskContext = createContext<KanbanTaskContextType | undefined>(
   undefined,
 )
 
-export const ManageTaskProvider = (Component: () => JSX.Element) => () => {
+export const KanbanTaskProvider = (Component: () => JSX.Element) => () => {
   const [task, setTask] = useState<Task>()
   const [column, setColumn] = useState<ColumnType>({
     id: '',
@@ -20,8 +20,13 @@ export const ManageTaskProvider = (Component: () => JSX.Element) => () => {
     {open: openManageTaskModal, close: closeManageTaskModal},
   ] = useDisclosure(false)
 
+  const [
+    taskDetailsModalOpened,
+    {open: openTaskDetailsModal, close: closeTaskDetailsModal},
+  ] = useDisclosure(false)
+
   return (
-    <ManageTaskContext.Provider
+    <KanbanTaskContext.Provider
       value={{
         column,
         setColumn,
@@ -30,18 +35,21 @@ export const ManageTaskProvider = (Component: () => JSX.Element) => () => {
         manageTaskModalOpened,
         openManageTaskModal,
         closeManageTaskModal,
+        taskDetailsModalOpened,
+        openTaskDetailsModal,
+        closeTaskDetailsModal,
       }}
     >
       <Component />
-    </ManageTaskContext.Provider>
+    </KanbanTaskContext.Provider>
   )
 }
 
-export const useManageTaskContext = (): ManageTaskContextType => {
-  const context = useContext(ManageTaskContext)
+export const useKanbanTaskContext = (): KanbanTaskContextType => {
+  const context = useContext(KanbanTaskContext)
   if (!context) {
     throw new Error(
-      'useManageTaskContext must be used within a ManageTaskProvider',
+      'useKanbanTaskContext must be used within a KanbanTaskProvider',
     )
   }
 

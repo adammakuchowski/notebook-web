@@ -1,6 +1,6 @@
 import {ColumnType, Task} from 'types'
 
-export interface ManageTaskContextType {
+export interface KanbanTaskContextType {
   column: ColumnType
   setColumn: (newColumn: ColumnType) => void
   task: Task | undefined
@@ -8,4 +8,7 @@ export interface ManageTaskContextType {
   manageTaskModalOpened: boolean
   openManageTaskModal: () => void
   closeManageTaskModal: () => void
+  taskDetailsModalOpened: boolean
+  openTaskDetailsModal: () => void
+  closeTaskDetailsModal: () => void
 }

@@ -1,7 +1,7 @@
 import {useTranslation} from 'react-i18next'
 import {Box, Button, Flex, Modal, Text, Title} from '@mantine/core'
 import {useDeleteColumn} from 'hooks'
-import {useDeleteColumnContext} from 'contexts'
+import {useKanbanColumnContext} from 'contexts'
 import classes from './DeleteColumnModal.module.css'
 
 export const DeleteColumnModal = (): JSX.Element => {
@@ -9,10 +9,10 @@ export const DeleteColumnModal = (): JSX.Element => {
   const {mutate, isPending} = useDeleteColumn()
 
   const {deleteColumnModalOpened, closeDeleteColumnModal, column} =
-    useDeleteColumnContext()
+    useKanbanColumnContext()
 
   const onDeleteColumn = (): void => {
-    mutate({columnId: column.id}, {onSuccess: closeDeleteColumnModal})
+    mutate({columnId: column?.id}, {onSuccess: closeDeleteColumnModal})
   }
 
   return (
@@ -26,7 +26,9 @@ export const DeleteColumnModal = (): JSX.Element => {
         <Flex>
           <Text>{t('tasks.deleteColumnModal.info')}</Text>
           <Text fw={700} ml={10}>
-            {t(`kanban.column.columnHeader.title.${column.title}`, {defaultValue: `${column.title}`})}
+            {t(`kanban.column.columnHeader.title.${column?.title}`, {
+              defaultValue: `${column?.title}`,
+            })}
           </Text>
         </Flex>
         <Text>{t('tasks.deleteColumnModal.extraInfo')}</Text>

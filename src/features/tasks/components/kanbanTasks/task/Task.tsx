@@ -6,7 +6,7 @@ import {
 import {useTranslation} from 'react-i18next'
 import {Box, Tooltip} from '@mantine/core'
 import {IconGridDots} from '@tabler/icons-react'
-import {useTaskDetailsContext} from 'contexts'
+import {useKanbanTaskContext} from 'contexts'
 import classes from './Task.module.css'
 import {TaskProps} from '../types'
 
@@ -34,7 +34,7 @@ const PriorityDot = ({priority}: {priority: string}): JSX.Element => {
 }
 
 export const Task = ({task, index}: TaskProps): JSX.Element => {
-  const {openTaskDetailsModal, setTask} = useTaskDetailsContext()
+  const {openTaskDetailsModal, setTask} = useKanbanTaskContext()
 
   const onTaskDetailsOpen = (): void => {
     setTask(task)
