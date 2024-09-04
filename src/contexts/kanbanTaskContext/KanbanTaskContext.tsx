@@ -8,12 +8,8 @@ const KanbanTaskContext = createContext<KanbanTaskContextType | undefined>(
 )
 
 export const KanbanTaskProvider = (Component: () => JSX.Element) => () => {
-  const [task, setTask] = useState<Task>()
-  const [column, setColumn] = useState<ColumnType>({
-    id: '',
-    title: '',
-    taskIds: []
-  })
+  const [task, setTask] = useState<Task | undefined>()
+  const [column, setColumn] = useState<ColumnType | undefined>()
 
   const [
     manageTaskModalOpened,

@@ -1,8 +1,8 @@
 import {ColumnType, Task} from 'types'
 
 export interface KanbanTaskContextType {
-  column: ColumnType
-  setColumn: (newColumn: ColumnType) => void
+  column: ColumnType | undefined
+  setColumn: (newColumn?: ColumnType) => void
   task: Task | undefined
   setTask: (newTask?: Task) => void
   manageTaskModalOpened: boolean
