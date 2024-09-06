@@ -3,14 +3,16 @@ import {useTranslation} from 'react-i18next'
 import {Box, Button, Modal, TextInput, Title} from '@mantine/core'
 import {useForm} from '@mantine/form'
 import {ModalMode} from 'types'
-import {useManageColumnContext} from 'contexts'
+import {useKanbanColumnContext} from 'contexts'
 import {useCreateColumn, useEditColumn} from 'hooks'
 import classes from './ManageColumnModal.module.css'
+import {initialValues} from './constants'
+import {InitialManageColumnModalFormValues} from './types'
 
 export const ManageColumnModal = (): JSX.Element => {
   const {t} = useTranslation()
   const {column, setColumn, manageColumnModalOpened, closeManageColumnModal} =
-    useManageColumnContext()
+    useKanbanColumnContext()
 
   const mode = column?.id ? ModalMode.EDIT : ModalMode.CREATE
 
@@ -21,11 +23,8 @@ export const ManageColumnModal = (): JSX.Element => {
     form.setValues({title: column?.title ?? ''})
   }, [column?.title])
 
-  const form = useForm({
-    initialValues: {
-      title: '',
-    },
-
+  const form = useForm<InitialManageColumnModalFormValues>({
+    initialValues,
     validate: {
       title: (value) => !value,
     },
@@ -66,7 +65,7 @@ export const ManageColumnModal = (): JSX.Element => {
           {...form.getInputProps('title')}
         />
         <Box className={classes.buttonsContainer}>
-          <Button onClick={closeManageColumnModal}>
+          <Button onClick={handleClose}>
             {t('general.cancel')}
           </Button>
           <Button type="submit" loading={isPending} disabled={!form.isValid()}>

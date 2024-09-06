@@ -11,7 +11,7 @@ import {
   Textarea,
   Title,
 } from '@mantine/core'
-import {useManageTaskContext} from 'contexts'
+import {useKanbanTaskContext} from 'contexts'
 import {useCreateTask, useUpdateTask} from 'hooks'
 import classes from './ManageTaskModal.module.css'
 import {InitialManageTaskModalFormValues} from './types'
@@ -22,7 +22,7 @@ export const ManageTaskModal = (): JSX.Element => {
   const {t} = useTranslation()
 
   const {closeManageTaskModal, manageTaskModalOpened, column, task, setTask} =
-    useManageTaskContext()
+    useKanbanTaskContext()
 
   const mode = task?._id ? ModalMode.EDIT : ModalMode.CREATE
 
@@ -45,7 +45,7 @@ export const ManageTaskModal = (): JSX.Element => {
       priority: task?.priority ?? '',
       eventDate: task?.eventDate ? new Date(task?.eventDate) : undefined,
     })
-  }, [task?._id])
+  }, [task])
 
   const prioritySelectOptions = [
     {label: t('priority.low'), value: 'low'},
@@ -77,7 +77,7 @@ export const ManageTaskModal = (): JSX.Element => {
       <form
         onSubmit={form.onSubmit((values) =>
           mutate(
-            {task: {...values, _id: task?._id}, columnId: column.id},
+            {task: {...values, _id: task?._id}, columnId: column?.id},
             {onSuccess: handleClose},
           ),
         )}

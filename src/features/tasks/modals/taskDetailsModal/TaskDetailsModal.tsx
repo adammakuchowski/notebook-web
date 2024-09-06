@@ -1,15 +1,19 @@
 import {useTranslation} from 'react-i18next'
 import moment from 'moment'
 import {Box, Loader, Modal, Title, Text, Flex, Button} from '@mantine/core'
-import {useManageTaskContext, useTaskDetailsContext} from 'contexts'
+import {useKanbanTaskContext} from 'contexts'
 import {useGetTaskDetails} from 'hooks'
 import classes from './TaskDetailsModal.module.css'
 
 export const TaskDetailsModal = (): JSX.Element => {
   const {t} = useTranslation()
-  const {openManageTaskModal, setTask} = useManageTaskContext()
-  const {task, taskDetailsModalOpened, closeTaskDetailsModal} =
-    useTaskDetailsContext()
+  const {
+    task,
+    taskDetailsModalOpened,
+    closeTaskDetailsModal,
+    openManageTaskModal,
+    setTask,
+  } = useKanbanTaskContext()
 
   const {isPending, data} = useGetTaskDetails(task?._id)
   const hasTime = moment(data?.data.eventDate).format('HH:mm:ss') !== '00:00:00'

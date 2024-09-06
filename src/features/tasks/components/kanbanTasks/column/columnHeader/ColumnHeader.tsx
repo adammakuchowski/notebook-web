@@ -1,7 +1,7 @@
 import {t} from 'i18next'
 import {Box, Title, Menu, ActionIcon} from '@mantine/core'
 import {IconDots, IconEdit, IconTrash} from '@tabler/icons-react'
-import {useDeleteColumnContext, useManageColumnContext} from 'contexts'
+import {useKanbanColumnContext} from 'contexts'
 import classes from './ColumnHeader.module.css'
 import {ColumnHeaderProps} from './types'
 
@@ -9,16 +9,15 @@ export const ColumnHeader = ({
   provided,
   column,
 }: ColumnHeaderProps): JSX.Element => {
-  const {openDeleteColumnModal, setColumn: setDeleteColumn} = useDeleteColumnContext()
-  const {openManageColumnModal, setColumn: setManageColumn} = useManageColumnContext()
+  const {openDeleteColumnModal, openManageColumnModal, setColumn} = useKanbanColumnContext()
 
   const onOpenManageColumnModal = (): void => {
-    setManageColumn(column)
+    setColumn(column)
     openManageColumnModal()
   }
 
   const onOpenDeleteColumnModal = (): void => {
-    setDeleteColumn(column)
+    setColumn(column)
     openDeleteColumnModal()
   }
 

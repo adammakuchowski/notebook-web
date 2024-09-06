@@ -11,11 +11,9 @@ import {
 } from 'features'
 import {useGetKanbanTasks} from 'hooks'
 import {
-  ManageColumnProvider,
-  ManageTaskProvider,
-  DeleteColumnProvider,
-  TaskDetailsProvider,
-  useManageColumnContext,
+  KanbanColumnProvider,
+  KanbanTaskProvider,
+  useKanbanColumnContext,
 } from 'contexts'
 import classes from './Tasks.module.css'
 import {useState} from 'react'
@@ -24,7 +22,7 @@ export const TasksPage = (): JSX.Element => {
   const {t} = useTranslation()
   const {isPending, isError, data} = useGetKanbanTasks()
   const [actionButtonDisabled, setActionButtonDisabled] = useState(false)
-  const {openManageColumnModal} = useManageColumnContext()
+  const {openManageColumnModal} = useKanbanColumnContext()
 
   return (
     <Box className={classes.pageContainer}>
@@ -53,8 +51,6 @@ export const TasksPage = (): JSX.Element => {
 }
 
 export const Tasks = compose(
-  ManageTaskProvider,
-  DeleteColumnProvider,
-  ManageColumnProvider,
-  TaskDetailsProvider,
+  KanbanTaskProvider,
+  KanbanColumnProvider,
 )(TasksPage)
