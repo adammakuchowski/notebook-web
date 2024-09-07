@@ -7,4 +7,5 @@ export {
   DeleteColumnModal,
   ManageColumnModal,
   TaskDetailsModal,
+  DeleteTaskModal,
 } from './tasks'

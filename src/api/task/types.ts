@@ -18,6 +18,10 @@ export interface UpdateTaskParams {
   columnId: string | undefined
 }
 
+export interface DeleteTaskParams {
+  taskId: string | undefined
+}
+
 export interface GetTaskDetailsParams {
   taskId: string | undefined
 }

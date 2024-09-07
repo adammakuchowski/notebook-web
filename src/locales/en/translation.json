@@ -35,6 +35,10 @@
       "info": "Are you sure you want to delete the column:",
       "extraInfo": "All tasks in this column will also be deleted."
     },
+    "deleteTaskModal": {
+      "modalTitle": "Delete task",
+      "info": "Are you sure you want to delete the task?"
+    },
     "manageColumnModal": {
       "createColumn": "Create column",
       "editColumn": "Edit column",

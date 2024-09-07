@@ -7,4 +7,5 @@ export type {
   DeleteColumnParams,
   CreateColumnParams,
   UpdateTaskParams,
+  DeleteTaskParams
 } from './types'

@@ -21,6 +21,11 @@ export const KanbanTaskProvider = (Component: () => JSX.Element) => () => {
     {open: openTaskDetailsModal, close: closeTaskDetailsModal},
   ] = useDisclosure(false)
 
+  const [
+    deleteTaskModalOpened,
+    {open: openDeleteTaskModal, close: closeDeleteTaskModal},
+  ] = useDisclosure(false)
+
   return (
     <KanbanTaskContext.Provider
       value={{
@@ -34,6 +39,9 @@ export const KanbanTaskProvider = (Component: () => JSX.Element) => () => {
         taskDetailsModalOpened,
         openTaskDetailsModal,
         closeTaskDetailsModal,
+        deleteTaskModalOpened,
+        openDeleteTaskModal,
+        closeDeleteTaskModal
       }}
     >
       <Component />

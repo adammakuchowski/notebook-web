@@ -35,6 +35,10 @@
       "info": "Czy na pewno chcesz usunąć kolumnę: ",
       "extraInfo": "Wszystkie zadania znajdujące się w tej kolumnie również zostaną usunięte."
     },
+    "deleteTaskModal": {
+      "modalTitle": "Usuń zadanie",
+      "info": "Czy na pewno chcesz usunąć zadanie?"
+    },
     "manageColumnModal": {
       "createColumn": "Stwórz kolumnę",
       "editColumn": "Edytuj kolumnę",
