@@ -8,6 +8,7 @@ import {
   DeleteColumnModal,
   ManageColumnModal,
   TaskDetailsModal,
+  DeleteTaskModal
 } from 'features'
 import {useGetKanbanTasks} from 'hooks'
 import {
@@ -46,6 +47,7 @@ export const TasksPage = (): JSX.Element => {
       <DeleteColumnModal />
       <ManageColumnModal />
       <TaskDetailsModal/>
+      <DeleteTaskModal />
     </Box>
   )
 }

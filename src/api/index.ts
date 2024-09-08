@@ -11,4 +11,5 @@ export type {
   DeleteColumnParams,
   CreateColumnParams,
   UpdateTaskParams,
+  DeleteTaskParams,
 } from './task'

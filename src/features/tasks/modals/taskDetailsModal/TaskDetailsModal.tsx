@@ -4,6 +4,7 @@ import {Box, Loader, Modal, Title, Text, Flex, Button} from '@mantine/core'
 import {useKanbanTaskContext} from 'contexts'
 import {useGetTaskDetails} from 'hooks'
 import classes from './TaskDetailsModal.module.css'
+import {IconTrash} from '@tabler/icons-react'
 
 export const TaskDetailsModal = (): JSX.Element => {
   const {t} = useTranslation()
@@ -13,6 +14,7 @@ export const TaskDetailsModal = (): JSX.Element => {
     closeTaskDetailsModal,
     openManageTaskModal,
     setTask,
+    openDeleteTaskModal,
   } = useKanbanTaskContext()
 
   const {isPending, data} = useGetTaskDetails(task?._id)
@@ -24,9 +26,15 @@ export const TaskDetailsModal = (): JSX.Element => {
     openManageTaskModal()
   }
 
+  const onTaskDelete = (): void => {
+    setTask(data?.data)
+    closeTaskDetailsModal()
+    openDeleteTaskModal()
+  }
+
   return (
     <Modal
-      withCloseButton={false}
+      withCloseButton={true}
       opened={taskDetailsModalOpened}
       onClose={closeTaskDetailsModal}
       title={<Title order={5}>{t('tasks.taskDetailsModal.title')}</Title>}
@@ -69,8 +77,12 @@ export const TaskDetailsModal = (): JSX.Element => {
           </Flex>
 
           <Box className={classes.taskDetailsButtonActons}>
-            <Button onClick={closeTaskDetailsModal}>
-              {t('general.close')}
+            <Button
+              onClick={onTaskDelete}
+              leftSection={<IconTrash size={14} />}
+              color="red"
+            >
+              {t('general.delete')}
             </Button>
             <Button onClick={onTaskEdit}>{t('general.edit')}</Button>
           </Box>

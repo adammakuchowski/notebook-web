@@ -11,4 +11,7 @@ export interface KanbanTaskContextType {
   taskDetailsModalOpened: boolean
   openTaskDetailsModal: () => void
   closeTaskDetailsModal: () => void
+  deleteTaskModalOpened: boolean
+  openDeleteTaskModal: () => void
+  closeDeleteTaskModal: () => void
 }
