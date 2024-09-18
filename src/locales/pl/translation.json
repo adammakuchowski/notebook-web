@@ -4,7 +4,8 @@
     "edit": "Edytuj",
     "delete": "Usuń",
     "cancel": "Anuluj",
-    "close": "Zamknij"
+    "close": "Zamknij",
+    "save": "Zapisz"
   },
   "login": {
     "title": "Logowanie",

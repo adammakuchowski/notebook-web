@@ -123,7 +123,7 @@ export const ManageTaskModal = (): JSX.Element => {
           >
             {mode === ModalMode.CREATE
               ? t('general.create')
-              : t('general.edit')}
+              : t('general.save')}
           </Button>
         </Box>
       </form>

@@ -8,11 +8,12 @@ export const DeleteTaskModal = (): JSX.Element => {
   const {t} = useTranslation()
   const {mutate, isPending} = useDeleteTask()
 
-  const {deleteTaskModalOpened, closeDeleteTaskModal, task} =
+  const {deleteTaskModalOpened, closeDeleteTaskModal, task, setTask} =
     useKanbanTaskContext()
 
   const onDeleteColumn = (): void => {
     mutate({taskId: task?._id}, {onSuccess: closeDeleteTaskModal})
+    setTask()
   }
 
   return (
